@@ -1,22 +1,42 @@
-@use '../variables' as *;
+@use '../variables/colors.scss' as *;
+@use '../variables/fonts.scss' as *;
 
 body {
     width: 100vw;
     height: 100vh;
+    background-color: $background;
+    font-family: $primary-font;
 }
-.fa-apple-alt{
-    color: #E34234;
+
+.navbar {
+    background-color: $nav-color;
+}
+
+.fa-apple-alt {
+    color: $logo-color;
+}
+
+#regbtn {
+    background-color: $text-color;
+    color: $nav-color;
+}
+
+#logbtn {
+    background-color: $background;
+    color: $nav-color;
+    font-weight: bold;
 }
 
 .main-container {
     display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
 }
 
 .flip-card-container {
     width: 300px;
     height: 400px;
     perspective: 1000px;
-    padding: 30px;
+    padding: 20px;
 }
 .flip-card {
     position: relative;
@@ -68,4 +88,9 @@ body {
     font-style: italic;
     font-weight: bold;
     margin-top: 1.25rem;
+}
+
+#footer {
+    background-color: $footer-color;
+    color: $text-color;
 }

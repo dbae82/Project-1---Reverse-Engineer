@@ -1,21 +1,39 @@
 body {
   width: 100vw;
   height: 100vh;
+  background-color: #0D698B;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  background-color: #F2F1E8;
 }
 
 .fa-apple-alt {
   color: #E34234;
 }
 
+#regbtn {
+  background-color: #050533;
+  color: #F2F1E8;
+}
+
+#logbtn {
+  background-color: #0D698B;
+  color: #F2F1E8;
+  font-weight: bold;
+}
+
 .main-container {
   display: grid;
+  grid-template-columns: 350px 350px 350px 350px;
 }
 
 .flip-card-container {
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  padding: 30px;
+  padding: 20px;
 }
 
 .flip-card {
@@ -76,6 +94,11 @@ body {
   font-style: italic;
   font-weight: bold;
   margin-top: 1.25rem;
+}
+
+#footer {
+  background-color: #F2F1E8;
+  color: #050533;
 }
 
 /*# sourceMappingURL=main.css.map */
