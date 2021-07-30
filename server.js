@@ -19,17 +19,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 
 /* routes */
-//app.use('/', controllers);
-
-app.get('/', function (req, res) {
-    //if (error) {
-       // console.log(error);
-        //req.error = error;
-        //return next();
-    ///}
-   //res.send("hello, you made it!");
-    return res.render('./index');
-});
+app.use('/', controllers);
 
 // Server bind
 app.listen(PORT, function () {
