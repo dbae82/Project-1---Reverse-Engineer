@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-sass": "sass --watch sass/src:public/styles",
     "watch-nodemon": "nodemon",
-    "dev": "concurrently -n sass,server -c 'bgMagenta.bold,bgGreen.bold' 'npm:watch-sass' 'npm:watch-nodemon'"
+    "dev": "open http://localhost:4000/ && concurrently -n sass,server -c 'bgMagenta.bold,bgGreen.bold' 'npm:watch-sass' 'npm:watch-nodemon'"
   },
   "repository": {
     "type": "git",
