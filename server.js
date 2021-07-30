@@ -1,12 +1,12 @@
 /* External Modules */
 const express = require('express');
+require("dotenv").config();
 
 /* Module instance */
 const app = express();
 
 /* Port */
-const PORT = 4000
-
+const PORT = process.env.PORT || 4000;
 
 /* Internal Modules */
 const controllers = require('./controllers/movie_controllers');
