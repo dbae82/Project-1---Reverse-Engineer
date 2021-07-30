@@ -9,7 +9,7 @@ const PORT = 4000
 
 
 /* Internal Modules */
-const controllers = require('./controllers');
+const controllers = require('./controllers/movie_controllers');
 
 /* App Config */
 app.set('view engine', 'ejs');
@@ -19,7 +19,8 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 
 /* routes */
-//app.use('/', controllers.movie);
+//app.use('/', controllers);
+
 app.get('/', function (req, res) {
     //if (error) {
        // console.log(error);
