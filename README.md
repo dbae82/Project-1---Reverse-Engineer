@@ -25,12 +25,13 @@ Create/edit review - desktop
 Create/edit review - mobile
 <img src="misc/edit-mobile.png">
 
-# Color Palette
+# Color Palette/Font
 * Logo: #E34234 - Cinnabar
 * Nav/Footer: #F2F1E8 - Ivory
 * Card Background/ Review: #F2F1E8 - Ivory
 * Background: #0D698B - Blue Grotto
 * Text: #050533 - Dark Blue
+* Font: 'Roboto', sans-serif
 
 # REST/CRUD
 
@@ -46,6 +47,19 @@ Create/edit review - mobile
 - [ ] The index route will show a static nav bar on top with the brand logo on the left, a search bar, and the register and login drop downs on the right. Below the nav will show the movie cards that will flip when toggled with the title link and description that can direct the user to the show page. On the bottom will be the footer with Jenna and Dan's credentials.
     - [ ] ejs layout of the index page with a nav bar, movie cards, and footer
     - [ ] REST routing to GET index page and show page
+    - [ ] style index.ejs using bulma and style guide
+    - [ ] create scripts for movie card animations
+
+- [ ] The show route will allow the user to view a specific movie title that will show the description of the movie. It will have an option to create a review, that will be layed out below the movie description with other users reviews. Once the review has been created, it will populate along with other reviews, where the user will have the option to edit and delete with a drop down menu attached to the user reference. Create, edit and delete forms will be modals that will pop up. Page layout will have the same nav bar and footer.
+    - [ ] ejs layout of the show route with nav bar, movie description, reviews and footer
+    - [ ] REST routing to POST/PUT/DELETE reviews on page
+    - [ ] style show.ejs using bulma and style guide
+
+- [ ] User registration and login on the nav bar will be drop down menus with the corresponding forms. Once user is authenticated and authorized, the nav bar will show the user avatar showing that the user is logged in.
+    - [ ] create forms for registration and login on both index.ejs and show.ejs
+    - [ ] REST routing CREATE/PUT for both index and show depending on where the user is trying to register or login
+    - [ ] style the forms for register and login
+    - [ ] set up auth in server.js file and create auth controller
 
 
 
