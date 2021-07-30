@@ -41,6 +41,14 @@ Create/edit review - mobile
 
 <img src="misc/erd.png">
 
+# User Stories
+
+* The index route will show a static nav bar on top with the brand logo on the left, a search bar, and the register and login drop downs on the right. Below the nav will show the movie cards that will flip when toggled with the title link and description that can direct the user to the show page. On the bottom will be the footer with Jenna and Dan's credentials.
+    ** ejs layout of the index page with a nav bar, movie cards, and footer
+    ** REST routing to GET index page and show page
+
+
+
 # Technology Packages:
 1. npm
 2. express
