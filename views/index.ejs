@@ -65,26 +65,27 @@
 
     <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
 
-        <div class="column">
-            <div class="flip-card-container box">
-                <div class="flip-card">
-                    <div class="flip-card-front">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_FMjpg_UX1000_.jpg"
-                            alt="Pride and Prejudice">
-                    </div>
-                    <div class="flip-card-back">
-                        <p>
-                            <a href="">
-                                Pride and Prejudice
-                            </a>
-                            <span>- Review 100% -</span>
-                        </p>
+        <% for(let idx=0; idx < movies.length; idx++){ %>
+            <% const movie=movies[idx] %>
+                <div class="column">
+                    <div class="flip-card-container box">
+                        <div class="flip-card">
+                            <div class="flip-card-front">
+                                <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                            </div>
+                            <div class="flip-card-back">
+                                <p>
+                                    <a href="/<%= movie.id %>">
+                                        <%= movie.title %>
+                                    </a>
+                                    <span>- Review 100% -</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- <div class="column">
+                <% } %>
+                    <!-- <div class="column">
             <div class="flip-card-container box">
                 <div class="flip-card">
                     <div class="flip-card-front">
