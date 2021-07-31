@@ -11,11 +11,11 @@ const movieSchema = new mongoose.Schema({
         type: Date
     },
     genre: {
-        type: String
+        type: [String]
 
     },
     cast: {
-        type: String
+        type: [String]
     },
     image: {
         type: String
