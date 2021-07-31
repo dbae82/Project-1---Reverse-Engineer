@@ -1,6 +1,6 @@
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #0D698B;
   font-family: "Roboto", sans-serif;
 }
@@ -13,27 +13,28 @@ body {
   color: #E34234;
 }
 
-#regbtn {
+#search-btn {
+  color: #F2F1E8;
+  background-color: #E34234;
+  font-weight: bold;
+}
+
+#reg-btn {
   background-color: #050533;
   color: #F2F1E8;
 }
 
-#logbtn {
+#log-btn {
   background-color: #0D698B;
   color: #F2F1E8;
   font-weight: bold;
-}
-
-.main-container {
-  display: grid;
-  grid-template-columns: 350px 350px 350px 350px;
 }
 
 .flip-card-container {
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  padding: 20px;
+  border-radius: 2em;
 }
 
 .flip-card {
@@ -61,24 +62,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 0.5rem; */
-}
-
-.flip-card-front {
-  background-color: #333;
-  color: #fff;
+  border-radius: 0.5rem;
 }
 
 .flip-card-back {
-  background-color: #517fa4;
-  color: #fff;
+  background-color: #F2F1E8;
+  color: #050533;
   transform: rotateY(180deg);
 }
 
 .flip-card-front img {
   width: 100%;
   height: 100%;
-  /* border-radius: 0.5rem; */
+  border-radius: 0.5rem;
 }
 
 .flip-card-back p {
