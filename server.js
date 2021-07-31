@@ -19,7 +19,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 
 /* routes */
-app.use('/', controllers);
+app.use('/', controllers);;
 
 // Server bind
 app.listen(PORT, function () {

@@ -1,3 +1,4 @@
 module.exports = {
-   movie: require('./movie_controllers')
+   movie: require('./movie_controllers'),
+   review: require('./review_controllers'),
 };
