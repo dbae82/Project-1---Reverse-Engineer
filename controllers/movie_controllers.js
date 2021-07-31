@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-//const Review = require('../models');
+const Movie = require('../models/Movie');
 
 /* index route */
 router.get('/', function (req, res, next) {
@@ -11,9 +11,8 @@ router.get('/', function (req, res, next) {
      console.log(error);
      req.error = error;
      return next();
-     }
+    }
 });
-
 
 module.exports = router;
 
