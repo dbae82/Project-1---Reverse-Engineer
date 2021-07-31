@@ -15,7 +15,22 @@ router.get('/', async function (req, res, next) {
     } catch (error) {
         console.log(error);
         req.error = error;
-       return next();
+        return next();
+    }
+});
+
+/* Show Route */
+router.get('/:id', async function (req, res, next) {
+    try {
+        const foundMovie = await Movie.findById(req.params.id);
+        const context = {
+            movie: foundMovie,
+        };
+        return res.render('./reviews/index', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
     }
 });
 
