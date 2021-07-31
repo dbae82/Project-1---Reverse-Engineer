@@ -1,27 +1,30 @@
-const { Review } = require("../models");
+const { Movie } = require('../models');
 
-Review.deleteMany({}, function (error, deletedProducts) {
-        if (error) {
-        return console.log(error);
-         }
-        Review.insertMany(
-        [
+const seed = async function() {
+    try {
+        await Movie.deleteMany();
+        const newMovies = await Movie.insertMany([
             {
-                rating: 5,
+                title: 'Pride and Prejudice',
+                description: 'Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?',
+                runtime: new Date(0, 0, 0, 2, 9),
+                genre: ['drama', 'romance'],
+                cast: ['Keira Knightley', 'Matthew Macfadyen', 'Brenda Blethyn'],
+                image: 'https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_FMjpg_UX1000_.jpg',
             },
             {
-                rating: 4
+                title: 'The Lord of the Rings: The Two Towers',
+                description: "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
+                runtime: new Date(0, 0, 0, 2, 59),
+                genre: ['action', 'adventure', 'drama', 'fantasy'],
+                cast: ['Elijah Wood', 'Ian McKellen', 'Viggo Mortensen'],
+                image: 'https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg',
             },
-            {
-                rating: 5
-            }
-        ],
-        function (error, createdReviews) {
-        if (error) {
-         return console.log(error);
-         }
-        console.log("=== Seed Complete ===");
-        console.log(createdReviews);
+        ]);
+        console.log(newReviews);
+    } catch (error) {
+        console.log(error);
     }
- );
-});
+};
+
+seed();
