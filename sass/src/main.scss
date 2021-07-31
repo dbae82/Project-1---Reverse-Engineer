@@ -37,6 +37,10 @@ body {
     margin: 20px;
 }
 
+.box {
+    background-color: $text-color;
+}
+
 .flip-card-container {
     width: 300px;
     height: 400px;
@@ -97,6 +101,14 @@ body {
     color: $text-color;
 }
 
+strong {
+    color: $text-color;
+}
+
 hr {
     background-color: $text-color;
+}
+
+li {
+    list-style: none;
 }
