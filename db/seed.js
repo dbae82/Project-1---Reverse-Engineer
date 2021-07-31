@@ -21,7 +21,7 @@ const seed = async function() {
                 image: 'https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg',
             },
         ]);
-        console.log(newReviews);
+        console.log(newMovies);
     } catch (error) {
         console.log(error);
     }
