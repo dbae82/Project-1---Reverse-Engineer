@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 /* Internal Modules */
-const controllers = require('./controllers/movie_controllers');
+const controllers = require('./controllers');
 
 /* App Config */
 app.set('view engine', 'ejs');
@@ -19,7 +19,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 
 /* routes */
-app.use('/', controllers);;
+app.use('/', controllers.movie);
 
 // Server bind
 app.listen(PORT, function () {
