@@ -121,4 +121,19 @@ li {
   color: #050533;
 }
 
+#review-btn {
+  background-color: #050533;
+  color: #F2F1E8;
+  margin-left: 35px;
+  margin-bottom: 40px;
+}
+
+#title {
+  color: #050533;
+}
+
+#description {
+  color: #F2F1E8;
+}
+
 /*# sourceMappingURL=main.css.map */
