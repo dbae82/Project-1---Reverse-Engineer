@@ -39,7 +39,7 @@ router.get('/:id', async function (req, res, next) {
 router.post('/:id', async function(req, res, next) {
     try {
         const createdReview = await Review.create(req.body);
-        return res.redirect(`/${createdReview.movie.id}`);
+        return res.redirect(`/${createdReview.movie._id}`);
     }catch (error) {
         console.log(error);
         req.error = error;
