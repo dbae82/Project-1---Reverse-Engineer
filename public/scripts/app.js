@@ -1,10 +1,10 @@
 const modal = document.querySelector('.modal');
 
-const btn = document.querySelector('#review-btn')
+const createReview= document.querySelector('#review-btn')
 
 const close = document.querySelector('.modal-close')
 
-btn.addEventListener('click', function () {
+createReview.addEventListener('click', function () {
     modal.style.display = 'block'
 });
 
@@ -17,3 +17,7 @@ window.addEventListener('click', function (event) {
     modal.style.display = 'none'
 }
 }); 
+
+editReview.addEventListener('click', function () {
+    modal.style.display = 'block'
+});
