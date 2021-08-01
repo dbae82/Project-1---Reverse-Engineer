@@ -16,10 +16,10 @@ const ReviewSchema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: "Movie",
         },
-        user: {
-            type: mongoose.Types.ObjectId,
-            ref: "User",
-        }
+        // user: {
+        //     type: mongoose.Types.ObjectId,
+        //     ref: "User",
+        // }
     },
     {
         timestamps: true

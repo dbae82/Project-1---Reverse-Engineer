@@ -36,5 +36,16 @@ router.get('/:id', async function (req, res, next) {
     }
 });
 
+router.post('/:id', async function(req, res, next) {
+    try {
+        const createdReview = await Review.create(req.body);
+        return res.redirect(`/${createdReview.movie.id}`);
+    }catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
 module.exports = router;
 
