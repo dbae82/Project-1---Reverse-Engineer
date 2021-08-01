@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const { Movie } = require('../models');
+const { Movie, Review } = require('../models');
 
 /* index route */
 router.get('/', async function (req, res, next) {
@@ -23,8 +23,10 @@ router.get('/', async function (req, res, next) {
 router.get('/:id', async function (req, res, next) {
     try {
         const foundMovie = await Movie.findById(req.params.id);
+        const allReviews = await Review.find({ movie: req.params.id });
         const context = {
             movie: foundMovie,
+            reviews: allReviews,
         };
         return res.render('./reviews/index', context);
     } catch (error) {

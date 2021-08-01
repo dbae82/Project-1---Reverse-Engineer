@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true}));
 
 /* routes */
 app.use('/', controllers.movie);
+app.use('/reviews', controllers.review);
 
 // Server bind
 app.listen(PORT, function () {

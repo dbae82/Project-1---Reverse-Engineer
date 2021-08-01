@@ -12,7 +12,6 @@ const MovieSchema = new mongoose.Schema({
     },
     genre: {
         type: [String]
-
     },
     cast: {
         type: [String]
