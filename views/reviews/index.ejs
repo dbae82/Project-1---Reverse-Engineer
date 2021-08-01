@@ -65,7 +65,7 @@
 
     <div>
         <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
-                <div class="columns">
+            <div class="columns">
                     <div class="column is-half">
                         <div class="box">
                             <img src="<%= movie.image %>" alt="<%= movie.title %>">
@@ -85,65 +85,85 @@
                             <a class="button is-primary" id="review-btn">
                                 <strong>Submit Review</strong>
                             </a>
+                            <div class="modal">
+                                <div class="modal-background"></div>
+                                <div class="modal-content">
+                                    <div class='box'>
+                                        <h1 class='title'>
+                                        Submit a review for <%= movie.title %>
+                                        <p class='is-family-monospace'>
+                                        this will be a form
+                                        </p>
+                                        <button class="modal-close is-large" 
+                                        aria-label="close">
+                                            Model
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
                         </div>
-                </div>
+            </div>
         </div>
     </div>
 
-    <section class="column">
-        <% reviews.forEach(review => { %>
+        <section class="column">
 
-        <div class="box">
-          <article class="media">
-            <div class="media-left">
-              <figure class="image is-64x64">
-                <img src="https://picsum.photos/200" alt="Image" />
-              </figure>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <h3>John Smith</h3>
-                <small>
-                  <%= new Date(review.createdAt).toLocaleString() %>
-                </small>
-                <br />
-                <!-- create our stars -->
+            <div class="column">
+            <% reviews.forEach(review => { %>
 
-                <% for( let index = 0; index < 5; index++ ) { %> <% if
-                (review.rating > index) { %>
-                <span class="icon">
-                  <i class="fas fa-star yellow"></i>
-                </span>
-                <% } else { %>
-                <span class="icon">
-                  <i class="fas fa-star"></i>
-                </span>
-                <% } %> <% } %>
-
-                <br />
-                <%= review.content %>
-
-                <hr />
-                <a href="/reviews/<%= review.movie._id %>">
-                   <%= review.movie.title %> </a>
-              </div>
-            </div>
-            <div class="media-right">
-              <section class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link"></a>
-
-                <div class="navbar-dropdown">
-                  <a class="button is-primary is-dark m-2 navbar-item"> Edit </a>
-                  <hr class="navbar-divider" />
-                  <a class="button is-danger m-2 is-dark">Remove</a>
+            <div class="box">
+            <article class="media">
+                <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="https://picsum.photos/200" alt="Image" />
+                </figure>
                 </div>
-              </section>
-            </div>
-          </article>
-        </div>
+                <div class="media-content">
+                <div class="content">
+                    <h3>John Smith</h3>
+                    <small>
+                    <%= new Date(review.createdAt).toLocaleString() %>
+                    </small>
+                    <br />
+                    <!-- create our stars -->
 
-        <% }) %>
-      </section>
+                    <% for( let index = 0; index < 5; index++ ) { %> <% if
+                    (review.rating > index) { %>
+                    <span class="icon">
+                    <i class="fas fa-star yellow"></i>
+                    </span>
+                    <% } else { %>
+                    <span class="icon">
+                    <i class="fas fa-star"></i>
+                    </span>
+                    <% } %> <% } %>
+
+                    <br />
+                    <%= review.content %>
+
+                    <hr/>
+                    <a href="/reviews/<%= review.movie._id %>">
+                    <%= review.movie.title %> </a>
+                </div>
+                </div>
+                <div class="media-right">
+                <section class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link"></a>
+
+                    <div class="navbar-dropdown">
+                    <a class="button is-primary is-dark m-2 navbar-item"> Edit </a>
+                    <hr class="navbar-divider" />
+                    <a class="button is-danger m-2 is-dark">Remove</a>
+                    </div>
+                </section>
+                </div>
+            </article>
+            </div>
+
+            <% }) %>
+            </div>
+        </section>
+    
 
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
