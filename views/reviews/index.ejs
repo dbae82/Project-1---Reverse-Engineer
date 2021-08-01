@@ -63,7 +63,7 @@
         </div>
     </nav>
 
-    <div>
+    <section>
         <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
             <div class="columns">
                     <div class="column is-half">
@@ -80,7 +80,7 @@
                                 <li> <strong>Genre:</strong> <%= movie.genre %> </li>
                                 <li> <strong>Cast:</strong> <%= movie.cast %> </li>
                             </ul>
-                    </div>
+                        </div>
                         <div class="buttons">
                             <a class="button is-primary" id="review-btn">
                                 <strong>Submit Review</strong>
@@ -89,28 +89,44 @@
                                 <div class="modal-background"></div>
                                 <div class="modal-content">
                                     <div class='box'>
-                                        <h1 class='title'>
-                                        Submit a review for <%= movie.title %>
-                                        <p class='is-family-monospace'>
-                                        this will be a form
-                                        </p>
+                                        <form action="/reviews" method="POST">
+                                            <div class="field">
+                                                <label class="label"> Rating </label>
+                                                <input 
+                                                    class="input"
+                                                    type="number"
+                                                    name="rating"
+                                                    min="1"
+                                                    max="5"
+                                                    placeholder="1-5"
+                                                />
+                                            </div>
+                                            <div class="field">
+                                                <label class="label">Content</label>
+                                                <textarea
+                                                    name="content"
+                                                    class="textarea"
+                                                    placeholder="Leave a review for <%= movie.title %>!"
+                                                ></textarea>
+                                            </div>
+                                        </form>
+                                        <button class="button mt-4">Submit</button>
                                         <button class="modal-close is-large" 
                                         aria-label="close">
                                             Model
-                                    </button>
-                                </div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
             </div>
         </div>
-    </div>
+    </section>
 
-        <section class="column">
-
-            <div class="column">
+    <section class="column">
+        <div class="column">
             <% reviews.forEach(review => { %>
-
             <div class="box">
             <article class="media">
                 <div class="media-left">
