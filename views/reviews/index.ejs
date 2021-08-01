@@ -62,21 +62,30 @@
             </div>
         </div>
     </nav>
-    <div class="columns is-mobile is-multiline is-vcentered">
-                <div class="column">
-                            <div>
-                                <img src="<%= movie.image %>" alt="<%= movie.title %>">
-                            </div>
-                            <div>
-                                <p>
-                                    <a href="/<%= movie.id %>">
-                                        <%= movie.title %>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
+
+    <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
+        <div class="columns">
+            <div class="column">
+                <img src="<%= movie.image %>" alt="<%= movie.title %>">
+            </div>
+            <div class="column" id="movie-info">
+                <div>
+                    <%= movie.description %>
                 </div>
+                <p>
+                    <%= movie.runtime %>
+                </p>
+                <p>
+                    <%= movie.cast %>
+                </p>
+                <p> 
+                    <%= movie.genre %>
+                </p> 
+            </div>
+        </div>
+    </div>
+
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
             <p><i class="fas fa-apple-alt"></i> <strong>Bad Apple</strong> by Jenna Waffensmith & Dan Bae</p>
