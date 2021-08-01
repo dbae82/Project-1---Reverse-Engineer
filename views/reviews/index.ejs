@@ -65,28 +65,30 @@
 
 
     <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
-        <div class="columns">
-            <div class="column">
-                <img src="<%= movie.image %>" alt="<%= movie.title %>">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="box">
+                        <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                    </div>
+                </div> 
+                <div class="column is-half" id="movie-info">
+                    <div class="content">
+                        <ul>
+                            <li> <h2 id="title"> <%=movie.title %> </h2> </li>
+                            <li id="description"> <%= movie.description %> </li>
+                            <li> <strong>Runtime:</strong> <%= movie.runtime %> </li>
+                            <li> <strong>Genre:</strong> <%= movie.genre %> </li>
+                            <li> <strong>Cast:</strong> <%= movie.cast %> </li>
+                        </ul>
+                </div>
+                    <div class="buttons">
+                        <a class="button is-primary" id="review-btn">
+                            <strong>Submit Review</strong>
+                        </a>
+                    </div>
             </div>
-            <div class="column" id="movie-info">
-                <div class="content">
-                    <h1> <%=movie.title %> </h1>
-                <p>
-                    <%= movie.description %>
-                </p>
-                <p> RUNTIME:
-                    <%= movie.runtime %>
-                </p>
-                <p> GENRE: 
-                    <%= movie.genre %>
-                </p> 
-                <p> CAST:
-                    <%= movie.cast %>
-                </p>
-            </div>
-        </div>
     </div>
+
 
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
