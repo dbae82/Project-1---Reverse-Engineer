@@ -13,12 +13,12 @@ const ReviewSchema = new mongoose.Schema(
             required: [true, "You must provide a reason for your review score."],
         },
         movie: {
-            tyoe: mongoose.Types.ObjectId,
-            ref: 'Movie',
+            type: mongoose.Types.ObjectId,
+            ref: "Movie",
         },
         user: {
             type: mongoose.Types.ObjectId,
-            ref: 'User',
+            ref: "User",
         }
     },
     {
