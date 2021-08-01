@@ -136,3 +136,11 @@ li {
     color: $review-background;
 }
 
+.modal-content {
+    margin-top: 300px;
+    overflow: hidden;
+}
+
+#create-review {
+    background: $review-background;
+}
