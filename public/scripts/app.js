@@ -18,23 +18,47 @@ closeCreate.addEventListener('click', function () {
     createModal.style.display = 'none'
 });
 
-
+/*
 const editReview = document.querySelector('#edit-btn');
 const editModal = document.querySelector('#edit-modal');
 const closeEdit = document.querySelector('#edit-close');
+*/
 
-
+/*
 editReview.addEventListener('click', function () {
      editModal.style.display = 'block'
 });
+*/
 
+const editReview = document.querySelectorAll('#edit-btn');
+const editModal = document.querySelector('#edit-modal');
+const closeEdit = document.querySelector('#edit-close');
 
+/*
+editReview.addEventListener('click', function () {
+    editModal.style.display = 'block'
+});
+*/
 
-window.addEventListener('click', function (event) {
-    if (event.target.id === 'edit-modal-background') {
-    editModal.style.display = 'none'
-}
-}); 
+editReview.forEach(btn => {
+    btn.addEventListener('click', function () {
+        editModal.style.display = 'block';
+    });
+    window.addEventListener('click', function (event) {
+        if (event.target.id === 'edit-modal-background') {
+        editModal.style.display = 'none'
+        }
+    });
+ });
+
+  /*
+
+    window.addEventListener('click', function (event) {
+        if (event.target.id === 'edit-modal-background') {
+        editModal.style.display = 'none'
+        }
+    });
+*/
 
 closeEdit.addEventListener('click', function () {
     editModal.style.display = 'none'
