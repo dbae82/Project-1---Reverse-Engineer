@@ -9,7 +9,7 @@ $('.modal-close').on('click', function(e) {
 });
 
 $('#edit-btn').on('click', function(e) {
-    $("#create-modal").addClass("is-active");  
+    $("#edit-modal").addClass("is-active");  
   });
   
 $('.modal-close').on(function() {

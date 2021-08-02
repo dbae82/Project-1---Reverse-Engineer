@@ -39,6 +39,7 @@ router.get('/:id', async function (req, res, next) {
 router.post('/:id', async function(req, res, next) {
     try {
         const createdReview = await Review.create(req.body);
+        console.log("post route for create review");
         return res.redirect(`/${createdReview.movie._id}`);
     }catch (error) {
         console.log(error);
@@ -66,6 +67,7 @@ router.put('/:movieId/:reviewId', async function(req, res, next) {
         return next();
     }
 });
+
 
 router.post('/:movieId', function(req, res, next) {
     try {
