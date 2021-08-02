@@ -136,13 +136,13 @@
             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
-                    <img src="<%= review.user.avatar %>" alt="User Avatar" />
+                    <!-- <img src="" alt="User Avatar" /> -->
                 </figure>
                 </div>
 
                 <div class="media-content">
                 <div class="content">
-                    <h3> <%= review.user.username %></h3>
+                   <!--- <h3> </h3> -->
                     <small>
                     <%= new Date(review.createdAt).toLocaleString() %>
                     </small>
@@ -172,45 +172,13 @@
                     <section class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
+
+                        
+
+                          <!-- Edit Modal -->
                 
-                        <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit</a>
-                        <div class="modal" id="edit-modal">
-                            <div class="modal-background" id="edit-modal-background"></div>
-                            <div class="modal-content">
-                                <div class="box modal-box">
-                                    <form action="/<%= movie.id %>/<%= review.id%>?_method=PUT" method="POST" id="edit-form">
-                                        <div class="field">
-                                            <label class="label" for="review-rating"> Rating </label>
-                                                <input 
-                                                class="input"
-                                                type="number"
-                                                name="rating"
-                                                id="review-rating"
-                                                min="1"
-                                                max="5"
-                                                value="<%= review.rating %>" 
-                                                placeholder="1-5"
-                                                />
-                                        </div>
-                                        <div class="field">
-                                            <label class="label" for="review-content">Content</label>
-                                                <textarea
-                                                name="content"
-                                                class="textarea"
-                                                id="review-content"
-                                                value="<%= review.content %>" 
-                                                placeholder="Edit your review for <%= movie.title %>!"
-                                                >
-                                                </textarea>
-                                        </div>
-                                        <button class="button mt-4">Submit</button>
-                                    </form>
-                                    <button class="modal-close is-large" id="edit-close" 
-                                    aria-label="close">
-                                    </button>
-                                </div>
-                        </div>
-                    </div>
+                          <%- include('../partials/edit', { review:  review, movieId: movie.id }) %>
+
                     <hr class="navbar-divider" />
                         <div>
                             <form action="/<%= movie.id %>/<%=review.id %>?_method=DELETE" method="POST">
@@ -218,6 +186,7 @@
                                 <input type="hidden" name="movie" value="<%= movie.id%>">
                             </form>
                         </div>
+                    </div>
                     </section>
                 </div>
             </article>
