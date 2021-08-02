@@ -1,0 +1,38 @@
+<div class="modal" id="edit-modal">
+    <div class="modal-background" id="edit-modal-background"></div>
+    <div class="modal-content">
+        <div class="box modal-box">
+            <form action="/<%= movie.id %>/<%= review.id%>?_method=PUT" method="POST">
+                <div class="field">
+                    <label class="label" for="review-rating"> Rating </label>
+                        <input 
+                        class="input"
+                        type="number"
+                        name="rating"
+                        id="review-rating"
+                        min="1"
+                        max="5"
+                        value="<%= review.rating %>" 
+                        placeholder="1-5"
+                        />
+                </div>
+                <div class="field">
+                    <label class="label" for="review-content">Content</label>
+                        <textarea
+                        name="content"
+                        class="textarea"
+                        id="review-content"
+                        value="<%= review.content %>" 
+                        placeholder="Edit your review for <%= movie.title %>!"
+                        >
+                        </textarea>
+                </div>
+                <button class="button mt-4">Submit</button>
+            </form>
+            <button class="modal-close is-large" id="edit-close" 
+            aria-label="close">
+            </button>
+        </div>
+    </div>
+</div>
+
