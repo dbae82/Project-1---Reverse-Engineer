@@ -45,6 +45,18 @@ body {
     font-weight: bold;
 }
 
+#log-confirm {
+    background-color: $background;
+    color: $nav-color;
+    font-weight: bold;
+}
+
+#log-cancel {
+    background-color: $logo-color;
+    color: $nav-color;
+    font-weight: bold;
+}
+
 #cards-container {
     margin: 20px;
 }
