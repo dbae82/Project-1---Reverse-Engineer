@@ -33,6 +33,30 @@ body {
     font-weight: bold;
 }
 
+#reg-confirm {
+    background-color: $background;
+    color: $nav-color;
+    font-weight: bold;
+}
+
+#reg-cancel {
+    background-color: $logo-color;
+    color: $nav-color;
+    font-weight: bold;
+}
+
+#log-confirm {
+    background-color: $background;
+    color: $nav-color;
+    font-weight: bold;
+}
+
+#log-cancel {
+    background-color: $logo-color;
+    color: $nav-color;
+    font-weight: bold;
+}
+
 #cards-container {
     margin: 20px;
 }

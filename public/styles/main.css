@@ -30,6 +30,30 @@ body {
   font-weight: bold;
 }
 
+#reg-confirm {
+  background-color: #0D698B;
+  color: #F2F1E8;
+  font-weight: bold;
+}
+
+#reg-cancel {
+  background-color: #E34234;
+  color: #F2F1E8;
+  font-weight: bold;
+}
+
+#log-confirm {
+  background-color: #0D698B;
+  color: #F2F1E8;
+  font-weight: bold;
+}
+
+#log-cancel {
+  background-color: #E34234;
+  color: #F2F1E8;
+  font-weight: bold;
+}
+
 #cards-container {
   margin: 20px;
 }

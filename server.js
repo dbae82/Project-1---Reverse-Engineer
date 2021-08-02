@@ -40,6 +40,7 @@ app.use(function(req, res, next) {
 
 /* routes */
 app.use('/reviews', controllers.review);
+app.use('/auth', controllers.auth);
 app.use('/', controllers.movie);
 
 
