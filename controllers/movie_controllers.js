@@ -50,7 +50,7 @@ router.post('/:id', async function(req, res, next) {
 router.put('/:id', async function(req, res, next) {
     try {
         const updatedReview = await Review.findByIdAndUpdate(
-            reviews._id, 
+            review._id, 
             {
                 $set: req.body,
             },
@@ -66,11 +66,11 @@ router.put('/:id', async function(req, res, next) {
     }
 });
 
-router.delete('/:id', async function(req, res, next) {
+router.delete('/:movieId/:reviewId', async function(req, res, next) {
     try {
-        const foundReview = await Review.findById(reviews._id);
-        await foundReview.delete();
-        return res.redirect(`/${req.params.id}`);
+        await Review.findByIdAndDelete(req.params.reviewId);
+        console.log(req.params.movieId);
+        return res.redirect(`/${req.params.movieId}`);
     } catch (error) {
         console.log(error);
         req.error = error;
