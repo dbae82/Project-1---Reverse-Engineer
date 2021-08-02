@@ -141,6 +141,10 @@ li {
     overflow: hidden;
 }
 
-#create-review {
+.modal-box {
+    background: $review-background;
+}
+
+#review-box {
     background: $review-background;
 }

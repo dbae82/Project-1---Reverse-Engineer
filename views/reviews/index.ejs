@@ -91,7 +91,7 @@
                             <div class="modal" id="create-modal">
                                 <div class="modal-background" id="create-modal-background"></div>
                                 <div class="modal-content">
-                                    <div class="box">
+                                    <div class="box modal-box">
                                         <form action="/<%= movie.id %>" method="POST">
                                             <div class="field">
                                                 <label class="label"> Rating </label>
@@ -132,13 +132,14 @@
     <section class="column">
         <div class="column">
             <% reviews.forEach(review => { %>
-            <div class="box">
+            <div class="box" id="review-box">
             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
                     <img src="https://picsum.photos/200" alt="User Image" />
                 </figure>
                 </div>
+
                 <div class="media-content">
                 <div class="content">
                     <h3> John Smith </h3>
@@ -148,36 +149,37 @@
 
                     <br/>
                   
-                    <% for( let index = 0; index < 5; index++ ) { %> <% if
-                    (review.rating > index) { %>
-                    <span class="icon">
-                    <i class="fas fa-star yellow"></i>
+                    <% for( let index = 0; index < 5; index++ ) { %> 
+                    <% if (review.rating > index) { %>
+                    <span class="icon" style="color: rgb(228, 228, 15)">
+                    <i class="fas fa-star"></i>
                     </span>
                     <% } else { %>
                     <span class="icon">
                     <i class="fas fa-star"></i>
                     </span>
-                    <% } %> <% } %>
+                    <% } %> 
+                    <% } %>
 
                     <br />
-
                     <%= review.content %>
-
                     <hr/>
+    
                 </div>
                 </div>
-                
+                   
                 <div class="media-right">
                     <section class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
                 
-                        <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit </a>
+            
+                        <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit</a>
                         <div class="modal" id="edit-modal">
                             <div class="modal-background" id="edit-modal-background"></div>
                             <div class="modal-content">
-                                <div class="box">
-                                    <form action="/<%= movie.id %>?_method=PUT" method="POST">
+                                <div class="box modal-box">
+                                    <form action="/<%= movie.id %>?_method=PUT" method="POST" id="edit-form">
                                         <div class="field">
                                             <label class="label" for="review-rating"> Rating </label>
                                                 <input 
@@ -202,29 +204,29 @@
                                                 >
                                                 </textarea>
                                         </div>
-                    
                                         <button class="button mt-4">Submit</button>
                                     </form>
                                     <button class="modal-close is-large" id="edit-close" 
                                     aria-label="close">
                                     </button>
                                 </div>
-                            </div>
-                            </div>
+                        </div>
+                    </div>
 
                     <hr class="navbar-divider" />
+                        <div>
+                            <form action="/<%=movie.id %>?_method=DELETE" method="POST">
+                                <input class="button is-danger m-2 is-dark" type="submit" value="Remove"/>
+                            </form>
+                        </div>
 
-                    <a class="button is-danger m-2 is-dark">Remove</a>
-                    </div>
-                </section>
+                    </section>
                 </div>
             </article>
             </div>
-
             <% }) %>
-            </div>
-        </section>
-    
+        </div>
+    </section> 
 
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
