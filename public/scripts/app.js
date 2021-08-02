@@ -33,6 +33,7 @@ editReview.addEventListener('click', function () {
 const editReview = document.querySelectorAll('#edit-btn');
 const editModal = document.querySelector('#edit-modal');
 const closeEdit = document.querySelector('#edit-close');
+const editForm = document.querySelector('#edit-form');
 
 /*
 editReview.addEventListener('click', function () {
@@ -40,25 +41,19 @@ editReview.addEventListener('click', function () {
 });
 */
 
-editReview.forEach(btn => {
+editReview.forEach(function (btn) {
     btn.addEventListener('click', function () {
         editModal.style.display = 'block';
     });
-    window.addEventListener('click', function (event) {
-        if (event.target.id === 'edit-modal-background') {
-        editModal.style.display = 'none'
-        }
-    });
  });
 
-  /*
+  
+window.addEventListener('click', function (event) {
+    if (event.target.id === 'edit-modal-background') {
+    editModal.style.display = 'none'
+    }
+});
 
-    window.addEventListener('click', function (event) {
-        if (event.target.id === 'edit-modal-background') {
-        editModal.style.display = 'none'
-        }
-    });
-*/
 
 closeEdit.addEventListener('click', function () {
     editModal.style.display = 'none'
