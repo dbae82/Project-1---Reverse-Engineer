@@ -178,7 +178,7 @@
                             <div class="modal-background" id="edit-modal-background"></div>
                             <div class="modal-content">
                                 <div class="box modal-box">
-                                    <form action="/<%= movie.id %>?_method=PUT" method="POST" id="edit-form">
+                                    <form action="/<%= movie.id %>/<%= review.id%>?_method=PUT" method="POST" id="edit-form">
                                         <div class="field">
                                             <label class="label" for="review-rating"> Rating </label>
                                                 <input 

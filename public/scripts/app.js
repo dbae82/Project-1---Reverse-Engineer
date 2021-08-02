@@ -41,11 +41,13 @@ editReview.addEventListener('click', function () {
 });
 */
 
+
 editReview.forEach(function (btn) {
     btn.addEventListener('click', function () {
         editModal.style.display = 'block';
     });
  });
+ 
 
   
 window.addEventListener('click', function (event) {
