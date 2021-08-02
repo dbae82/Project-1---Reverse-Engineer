@@ -1,5 +1,6 @@
 /* External Modules */
 const express = require('express');
+const methodOverride = require("method-override");
 require("dotenv").config();
 
 /* Module instance */
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 /* middleware */
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
+app.use(methodOverride("_method"));
 
 /* routes */
 app.use('/', controllers.movie);
