@@ -63,6 +63,7 @@
         </div>
     </nav>
 
+        <!-- movie information section -->
     <section>
         <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
             <div class="columns">
@@ -81,14 +82,16 @@
                                 <li> <strong>Cast:</strong> <%= movie.cast %> </li>
                             </ul>
                         </div>
+
+                        <!-- create review button and modal -->
                         <div class="buttons">
-                            <a class="button is-primary modal-btn" id="review-btn">
+                            <a class="button is-primary modal-btn" id="create-btn">
                                 <strong>Submit Review</strong>
                             </a>
-                            <div class="modal">
-                                <div class="modal-background"></div>
+                            <div class="modal" id="create-modal">
+                                <div class="modal-background" id="create-modal-background"></div>
                                 <div class="modal-content">
-                                    <div class="box" id="create-review">
+                                    <div class="box">
                                         <form action="/<%= movie.id %>" method="POST">
                                             <div class="field">
                                                 <label class="label"> Rating </label>
@@ -112,18 +115,20 @@
                                             <input type="hidden" name="movie" value="<%= movie._id%>">
                                             <button class="button mt-4">Submit</button>
                                         </form>
-                                        <button class="modal-close is-large" 
+                                        <button class="modal-close is-large" id="create-close" 
                                         aria-label="close">
                                         </button>
                                     </div>
                                 </div>
                             </div>
+                        
                         </div>
                     </div>
             </div>
         </div>
     </section>
 
+        <!-- post reviews -->
     <section class="column">
         <div class="column">
             <% reviews.forEach(review => { %>
@@ -159,28 +164,27 @@
                     <%= review.content %>
 
                     <hr/>
-                    <a href="/reviews/<%= review.movie._id %>">
-                    <%= review.movie.title %> </a>
                 </div>
                 </div>
+                
                 <div class="media-right">
-               
                     <section class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
-
-                    <a class="button is-primary is-dark m-2 navbar-item modal-btn"> Edit </a>
-                        <div class="modal">
-                            <div class="modal-background"></div>
+                
+                        <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit </a>
+                        <div class="modal" id="edit-modal">
+                            <div class="modal-background" id="edit-modal-background"></div>
                             <div class="modal-content">
-                                <div class="box" id="edit-review">
-                                    <form action="/<%= movie.id %>" method="POST">
+                                <div class="box">
+                                    <form action="/<%= movie.id %>?_method=PUT" method="POST">
                                         <div class="field">
-                                            <label class="label"> Rating </label>
+                                            <label class="label" for="review-rating"> Rating </label>
                                                 <input 
                                                 class="input"
                                                 type="number"
                                                 name="rating"
+                                                id="review-rating"
                                                 min="1"
                                                 max="5"
                                                 value="<%= review.rating %>" 
@@ -188,22 +192,25 @@
                                                 />
                                         </div>
                                         <div class="field">
-                                            <label class="label">Content</label>
+                                            <label class="label" for="review-content">Content</label>
                                                 <textarea
                                                 name="content"
                                                 class="textarea"
+                                                id="review-content"
                                                 value="<%= review.content %>" 
                                                 placeholder="Edit your review for <%= movie.title %>!"
-                                                ></textarea>
-                                            </div>
-                                            <button class="button mt-4">Submit</button>
-                                            </form>
-                                            <button class="modal-close is-large" 
-                                            aria-label="close">
-                                            </button>
+                                                >
+                                                </textarea>
                                         </div>
-                                    </div>
+                    
+                                        <button class="button mt-4">Submit</button>
+                                    </form>
+                                    <button class="modal-close is-large" id="edit-close" 
+                                    aria-label="close">
+                                    </button>
                                 </div>
+                            </div>
+                            </div>
 
                     <hr class="navbar-divider" />
 
