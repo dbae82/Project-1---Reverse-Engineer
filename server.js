@@ -33,11 +33,15 @@ app.use(
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(methodOverride("_method"));
+app.use(function(req, res, next) {
+    console.log(`${req.url} ${req.method}`);
+    next();
+});
 
 /* routes */
-app.use('/', controllers.movie);
 app.use('/reviews', controllers.review);
-app.use('/', controllers.auth);
+app.use('/', controllers.movie);
+
 
 // Server bind
 app.listen(PORT, function () {

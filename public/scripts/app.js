@@ -8,6 +8,12 @@ $('.modal-close').on('click', function(e) {
     $('#create-modal').removeClass('is-active');
 });
 
+$('.edit-btn').on('click', function(e) {
+    $(`#${e.target.dataset.reviewid}`).toggleClass("is-active");  
+  });
+  
+
+
 /* Edit Review Modal */
 
 /*
@@ -20,18 +26,7 @@ editButton.forEach(function (btn){
   });
 });
   
-$('.modal-close').on(function() {
-    $('#edit-modal').removeClass('is-active');
-});
-
-$('.toggle-modal').on('click', (e) => {
-    $(".modal").toggleClass("is-active");
-  })
-  editReview.addEventListener('click', function () {
-    editModal.style.display = 'block'
-});
-*/
-
+;
 
 
 
@@ -47,3 +42,14 @@ editReview.forEach(function (btn) {
     });
  });
  
+
+$('.toggle-modal').on('click', (e) => {
+    $(".modal").toggleClass("is-active");
+  })
+  editReview.addEventListener('click', function () {
+    editModal.style.display = 'block'
+});
+*/
+
+
+

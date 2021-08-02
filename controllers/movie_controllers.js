@@ -39,6 +39,7 @@ router.get('/:id', async function (req, res, next) {
 router.post('/:id', async function(req, res, next) {
     try {
         const createdReview = await Review.create(req.body);
+        console.log("post route for create review");
         return res.redirect(`/${createdReview.movie._id}`);
     }catch (error) {
         console.log(error);
@@ -47,7 +48,7 @@ router.post('/:id', async function(req, res, next) {
     }
 });
 
-router.put('/:movieId/:reviewId', async function(req, res, next) {
+router.put('/:movieId/:reviewId/edit', async function(req, res, next) {
     try {
         const updatedReview = await Review.findByIdAndUpdate(
             req.params.reviewId,
@@ -58,13 +59,27 @@ router.put('/:movieId/:reviewId', async function(req, res, next) {
                 new: true,
             }
         )
-        return res.redirect(`/${updatedReview.movie._id}`);
+        console.log(updatedReview.id, "put route");
+        return res.redirect(`/${req.params.movieId}`);
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
 });
+
+
+// router.post('/:movieId', function(req, res, next) {
+//     try {
+//         console.log(req.params.movieId, 'in the post route');
+//         return res.send("You have arrived");
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// });
+
 
 router.delete('/:movieId/:reviewId', async function(req, res, next) {
     try {
