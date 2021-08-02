@@ -70,6 +70,7 @@ router.delete('/:id', async function(req, res, next) {
     try {
         const foundReview = await Review.findById(reviews._id);
         await foundReview.delete();
+        return res.redirect(`/${req.params.id}`);
     } catch (error) {
         console.log(error);
         req.error = error;
