@@ -24,7 +24,6 @@ router.get('/:id', async function (req, res, next) {
     try {
         const foundMovie = await Movie.findById(req.params.id);
         const allReviews = await Review.find({ movie: req.params.id }).populate('user');
-        console.log(allReviews);
         const context = {
             movie: foundMovie,
             reviews: allReviews,
@@ -59,6 +58,7 @@ router.put('/:movieId/:reviewId', async function(req, res, next) {
                 new: true,
             }
         )
+        console.log(review.id, "put route");
         return res.redirect(`/${updatedReview.movie._id}`);
     } catch (error) {
         console.log(error);
@@ -66,6 +66,18 @@ router.put('/:movieId/:reviewId', async function(req, res, next) {
         return next();
     }
 });
+
+router.post('/:movieId', function(req, res, next) {
+    try {
+        console.log(req.params.movieId, 'in the post route');
+        return res.send("You have arrived");
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
 
 router.delete('/:movieId/:reviewId', async function(req, res, next) {
     try {

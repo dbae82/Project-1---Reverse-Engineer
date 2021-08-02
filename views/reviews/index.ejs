@@ -136,13 +136,13 @@
             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
-                    <img src="<%= review.user.avatar %>" alt="User Avatar" />
+                    <!-- <img src="" alt="User Avatar" /> -->
                 </figure>
                 </div>
 
                 <div class="media-content">
                 <div class="content">
-                    <h3> <%= review.user.username %></h3>
+                   <!--- <h3> </h3> -->
                     <small>
                     <%= new Date(review.createdAt).toLocaleString() %>
                     </small>
@@ -172,11 +172,11 @@
                     <section class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
-                        <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit</a>
+                        
 
                           <!-- Edit Modal -->
                           
-                          <%- include('../partials/edit', { review: 'review.id' }) %> 
+                          <%- include('../partials/edit', { review:  review.id }) %>
 
                     <hr class="navbar-divider" />
                         <div>
