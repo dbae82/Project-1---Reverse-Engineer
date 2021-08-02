@@ -172,11 +172,12 @@
                     <section class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
+
                         
 
                           <!-- Edit Modal -->
-                          
-                          <%- include('../partials/edit', { review:  review.id }) %>
+                
+                          <%- include('../partials/edit', { review:  review, movieId: movie.id }) %>
 
                     <hr class="navbar-divider" />
                         <div>

@@ -8,13 +8,11 @@ $('.modal-close').on('click', function(e) {
     $('#create-modal').removeClass('is-active');
 });
 
-$('#edit-btn').on('click', function(e) {
-    $("#edit-modal").addClass("is-active");  
+$('.edit-btn').on('click', function(e) {
+    $(`#${e.target.dataset.reviewid}`).toggleClass("is-active");  
   });
   
-$('.modal-close').on(function() {
-    $('#edit-modal').removeClass('is-active');
-})
+
 
 /* Edit Review Modal */
 

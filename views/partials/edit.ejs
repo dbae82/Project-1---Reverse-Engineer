@@ -1,11 +1,10 @@
 
-
-<a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit</a>
-<div class="modal" id="edit-modal">
+<button class="button is-primary edit-btn" data-reviewId="<%= review.id%>"> Edit</button>
+<div class="modal" id="<%=review.id%>">
     <div class="modal-background" id="edit-modal-background"></div>
     <div class="modal-content">
         <div class="box modal-box">
-            <form action="/<%= movie.id %>/<%= review.id%>?_method=PUT" method="POST">
+            <form action="/reviews/<%= review.id%>/edit?_method=PUT" method="POST" >
                 <div class="field">
                     <label class="label" for="review-rating"> Rating </label>
                         <input 
