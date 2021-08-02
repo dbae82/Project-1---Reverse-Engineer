@@ -23,20 +23,25 @@ const editReview = document.querySelector('#edit-btn');
 const editModal = document.querySelector('#edit-modal');
 const closeEdit = document.querySelector('#edit-close');
 
+
+editReview.addEventListener('click', function () {
+     editModal.style.display = 'block'
+});
+
+
+
 window.addEventListener('click', function (event) {
     if (event.target.id === 'edit-modal-background') {
     editModal.style.display = 'none'
 }
 }); 
 
-editReview.addEventListener('click', function () {
-    editModal.style.display = 'block'
-});
-
 closeEdit.addEventListener('click', function () {
     editModal.style.display = 'none'
 });
 
+
+/*
 const deleteModal = document.querySelector('#delete-modal');
 const deleteReview = document.querySelector('#delete-btn');
 const closeDelete = document.querySelector('#delete-close');
@@ -54,3 +59,4 @@ window.addEventListener('click', function (event) {
 closeDelete.addEventListener('click', function () {
     deleteModal.style.display = 'none'
 });
+*/

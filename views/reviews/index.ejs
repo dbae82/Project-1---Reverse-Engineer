@@ -139,6 +139,7 @@
                     <img src="https://picsum.photos/200" alt="User Image" />
                 </figure>
                 </div>
+                
                 <div class="media-content">
                 <div class="content">
                     <h3> John Smith </h3>
@@ -167,11 +168,13 @@
                 </div>
                 </div>
                 
+                
                 <div class="media-right">
                     <section class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
                 
+                   
                         <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit </a>
                         <div class="modal" id="edit-modal">
                             <div class="modal-background" id="edit-modal-background"></div>
@@ -202,29 +205,29 @@
                                                 >
                                                 </textarea>
                                         </div>
-                    
                                         <button class="button mt-4">Submit</button>
                                     </form>
                                     <button class="modal-close is-large" id="edit-close" 
                                     aria-label="close">
                                     </button>
                                 </div>
-                            </div>
-                            </div>
+                        </div>
+                    </div>
 
                     <hr class="navbar-divider" />
+                        <div>
+                            <form action="/<%=movie.id %>?_method=DELETE" method="POST">
+                                <input class="button is-danger m-2 is-dark" type="submit" value="Remove"/>
+                            </form>
+                        </div>
 
-                    <a class="button is-danger m-2 is-dark">Remove</a>
-                    </div>
-                </section>
+                    </section>
                 </div>
             </article>
             </div>
-
             <% }) %>
-            </div>
-        </section>
-    
+        </div>
+    </section> 
 
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
