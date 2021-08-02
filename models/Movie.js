@@ -8,7 +8,7 @@ const MovieSchema = new mongoose.Schema({
         type: String
     },
     runtime: {
-        type: Date
+        type: String
     },
     genre: {
         type: [String]
@@ -17,6 +17,9 @@ const MovieSchema = new mongoose.Schema({
         type: [String]
     },
     image: {
+        type: String
+    },
+    rating: {
         type: String
     }
 },
