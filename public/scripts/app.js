@@ -51,5 +51,15 @@ $('.toggle-modal').on('click', (e) => {
 });
 */
 
+/* Registration Modal */
+$('#reg-btn').on('click', function(e) {
+  $('#reg-modal').addClass('is-active');
+});
 
+$('#reg-close').on('click', function(e) {
+  $('#reg-modal').removeClass('is-active');
+});
 
+$('#reg-cancel').on('click', function(e) {
+  $('#reg-modal').removeClass('is-active');
+});

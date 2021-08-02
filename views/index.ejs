@@ -60,6 +60,56 @@
                     </div>
                 </div>
             </div>
+            <div class="modal" id="reg-modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Register</p>
+                        <button class="delete" aria-label="close" id="reg-close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" placeholder="Email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <!-- <i class="fas fa-check"></i> -->
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" type="password" placeholder="Password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" type="username" placeholder="Username">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" type="avatar" placeholder="Avatar">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user-circle"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button" id="reg-confirm">Register</button>
+                        <button class="button" id="reg-cancel">Cancel</button>
+                    </footer>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -78,7 +128,9 @@
                                     <a href="/<%= movie.id %>" id="movie-title">
                                         <%= movie.title %>
                                     </a>
-                                    <span><%= movie.description %></span>
+                                    <span>
+                                        <%= movie.description %>
+                                    </span>
                                 </p>
                             </div>
                         </div>
