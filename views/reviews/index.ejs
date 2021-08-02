@@ -173,7 +173,6 @@
                     <a class="navbar-link"></a>
                     <div class="navbar-dropdown">
                 
-            
                         <a class="button is-primary is-dark m-2 navbar-item modal-btn" id="edit-btn"> Edit</a>
                         <div class="modal" id="edit-modal">
                             <div class="modal-background" id="edit-modal-background"></div>
@@ -212,21 +211,19 @@
                                 </div>
                         </div>
                     </div>
-
                     <hr class="navbar-divider" />
                         <div>
                             <form action="/<%=movie.id %>?_method=DELETE" method="POST">
                                 <input class="button is-danger m-2 is-dark" type="submit" value="Remove"/>
                             </form>
                         </div>
-
                     </section>
                 </div>
             </article>
             </div>
             <% }) %>
         </div>
-    </section> 
+    </section>
 
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
