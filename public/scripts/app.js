@@ -1,4 +1,15 @@
 
+$("#showModal").click(function() {
+    $(".modal").addClass("is-active");  
+  });
+  
+  $(".modal-close").click(function() {
+     $(".modal").removeClass("is-active");
+  });
+
+
+
+/*
 const createReview= document.querySelector('#create-btn');
 const createModal = document.querySelector('#create-modal');
 const closeCreate = document.querySelector('#create-close');
@@ -22,24 +33,24 @@ closeCreate.addEventListener('click', function () {
 const editReview = document.querySelector('#edit-btn');
 const editModal = document.querySelector('#edit-modal');
 const closeEdit = document.querySelector('#edit-close');
-*/
 
-/*
+
+
 editReview.addEventListener('click', function () {
      editModal.style.display = 'block'
 });
-*/
+
 
 const editReview = document.querySelectorAll('#edit-btn');
 const editModal = document.querySelector('#edit-modal');
 const closeEdit = document.querySelector('#edit-close');
 const editForm = document.querySelector('#edit-form');
 
-/*
+
 editReview.addEventListener('click', function () {
     editModal.style.display = 'block'
 });
-*/
+
 
 
 editReview.forEach(function (btn) {
@@ -49,7 +60,6 @@ editReview.forEach(function (btn) {
  });
  
 
-  
 window.addEventListener('click', function (event) {
     if (event.target.id === 'edit-modal-background') {
     editModal.style.display = 'none'
@@ -61,8 +71,6 @@ closeEdit.addEventListener('click', function () {
     editModal.style.display = 'none'
 });
 
-
-/*
 const deleteModal = document.querySelector('#delete-modal');
 const deleteReview = document.querySelector('#delete-btn');
 const closeDelete = document.querySelector('#delete-close');
