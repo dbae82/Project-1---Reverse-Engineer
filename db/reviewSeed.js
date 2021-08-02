@@ -21,6 +21,11 @@ const seed = async function() {
                 content: '😍',
                 movie: '6105ff0eaf5205c85f7a71fb',
                 user: '6106cc17092234d51fc4b874'
+            },{
+                rating: 5,
+                content: 'Great!',
+                movie: '6105ff0eaf5205c85f7a7201',
+                user: '6106cc17092234d51fc4b874'
             },
         ]);
         console.log(newReviews);

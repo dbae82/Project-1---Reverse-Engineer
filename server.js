@@ -37,6 +37,7 @@ app.use(methodOverride("_method"));
 /* routes */
 app.use('/', controllers.movie);
 app.use('/reviews', controllers.review);
+app.use('/', controllers.auth);
 
 // Server bind
 app.listen(PORT, function () {
