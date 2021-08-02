@@ -47,5 +47,35 @@ router.post('/:id', async function(req, res, next) {
     }
 });
 
+router.put('/:id', async function(req, res, next) {
+    try {
+        const updatedReview = await Review.findByIdAndUpdate(
+            reviews._id, 
+            {
+                $set: req.body,
+            },
+            {
+                new: true,
+            }
+        )
+        return res.redirect(`/${updatedReview.movie._id}`);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+router.delete('/:id', async function(req, res, next) {
+    try {
+        const foundReview = await Review.findById(reviews._id);
+        await foundReview.delete();
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
 module.exports = router;
 
