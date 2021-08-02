@@ -66,13 +66,11 @@ router.put('/:id', async function(req, res, next) {
     }
 });
 
-router.delete('/:id', async function(req, res, next) {
+router.delete('/:movieId/:reviewId', async function(req, res, next) {
     try {
-        // const foundReview = await Review.findById(reviews.id);
-        // await foundReview.delete();
-        await Review.findByIdAndDelete(req.params.id);
-        console.log(movie.id);
-        return res.send('hello');
+        await Review.findByIdAndDelete(req.params.reviewId);
+        console.log(req.params.movieId);
+        return res.redirect(`/${req.params.movieId}`);
     } catch (error) {
         console.log(error);
         req.error = error;
