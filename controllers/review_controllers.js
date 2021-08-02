@@ -3,14 +3,17 @@ const router = express.Router();
 
 const { Review, Product } = require('../models');
 
-// router.get('/', function(req, res) {
-//     Review.find({}, function(error, allReviews) {
-//         if (error) {
-//             console.log(error);
-//         }
-//         return res.send(allReviews);
-//     });
-// });
+router.post('/:id', async function(req, res, next) {
+    try {
+        const createdReview = await Review.create(req.body);
+        console.log("post route for create review");
+        return res.redirect(`/${createdReview.movie._id}`);
+    }catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
 
 router.put('/:reviewId/edit', async function(req, res, next) {
     try {
@@ -25,6 +28,17 @@ router.put('/:reviewId/edit', async function(req, res, next) {
         )
         console.log(updatedReview.id, "put route");
         return res.redirect(`/${updatedReview.movie}`);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+router.delete('/:movieId/:reviewId', async function(req, res, next) {
+    try {
+        await Review.findByIdAndDelete(req.params.reviewId);
+        return res.redirect(`/${req.params.movieId}`);
     } catch (error) {
         console.log(error);
         req.error = error;
