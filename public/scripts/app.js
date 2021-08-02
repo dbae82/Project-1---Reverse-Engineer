@@ -1,55 +1,43 @@
 
-$("#showModal").click(function() {
-    $(".modal").addClass("is-active");  
+/* Create Review Modal */
+$('#create-btn').on('click', function(e) {
+    $("#create-modal").addClass("is-active");  
   });
   
-  $(".modal-close").click(function() {
-     $(".modal").removeClass("is-active");
+$('.modal-close').on('click', function(e) {
+    $('#create-modal').removeClass('is-active');
+});
+
+/* Edit Review Modal */
+
+/*
+
+const editButton = $('#edit-btn');
+
+editButton.forEach(function (btn){
+    btn.click(function() {
+        $('#edit-modal').toggleClass('is-active');  
   });
-
-
-
-/*
-const createReview= document.querySelector('#create-btn');
-const createModal = document.querySelector('#create-modal');
-const closeCreate = document.querySelector('#create-close');
-
-
-createReview.addEventListener('click', function () {
-    createModal.style.display = 'block'
+});
+  
+$('.modal-close').on(function() {
+    $('#edit-modal').removeClass('is-active');
 });
 
-window.addEventListener('click', function (event) {
-    if (event.target.id === 'review-modal-background') {
-    createModal.style.display = 'none'
-}
-}); 
-
-closeCreate.addEventListener('click', function () {
-    createModal.style.display = 'none'
+$('.toggle-modal').on('click', (e) => {
+    $(".modal").toggleClass("is-active");
+  })
+  editReview.addEventListener('click', function () {
+    editModal.style.display = 'block'
 });
-
-/*
-const editReview = document.querySelector('#edit-btn');
-const editModal = document.querySelector('#edit-modal');
-const closeEdit = document.querySelector('#edit-close');
+*/
 
 
-
-editReview.addEventListener('click', function () {
-     editModal.style.display = 'block'
-});
 
 
 const editReview = document.querySelectorAll('#edit-btn');
 const editModal = document.querySelector('#edit-modal');
-const closeEdit = document.querySelector('#edit-close');
 const editForm = document.querySelector('#edit-form');
-
-
-editReview.addEventListener('click', function () {
-    editModal.style.display = 'block'
-});
 
 
 
@@ -59,33 +47,3 @@ editReview.forEach(function (btn) {
     });
  });
  
-
-window.addEventListener('click', function (event) {
-    if (event.target.id === 'edit-modal-background') {
-    editModal.style.display = 'none'
-    }
-});
-
-
-closeEdit.addEventListener('click', function () {
-    editModal.style.display = 'none'
-});
-
-const deleteModal = document.querySelector('#delete-modal');
-const deleteReview = document.querySelector('#delete-btn');
-const closeDelete = document.querySelector('#delete-close');
-
-deleteReview.addEventListener('click', function () {
-    deleteModal.style.display = 'block'
-});
-
-window.addEventListener('click', function (event) {
-    if (event.target.id === 'delete-modal-background') {
-    deleteModal.style.display = 'none'
-}
-}); 
-
-closeDelete.addEventListener('click', function () {
-    deleteModal.style.display = 'none'
-});
-*/
