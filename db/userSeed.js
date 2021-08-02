@@ -7,7 +7,7 @@ const seed = async function() {
             {
                 email: 'dbae82@gmail.com',
                 password: 'connect1234',
-                username: 'baecon',
+                username: 'BaecoN',
             },
             {
                 email: 'jwaffensmith@gmail.com',

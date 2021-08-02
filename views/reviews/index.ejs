@@ -136,13 +136,13 @@
             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
-                    <img src="https://picsum.photos/200" alt="User Image" />
+                    <img src="<%= review.user.avatar %>" alt="User Avatar" />
                 </figure>
                 </div>
 
                 <div class="media-content">
                 <div class="content">
-                    <h3> John Smith </h3>
+                    <h3> <%= review.user.username %></h3>
                     <small>
                     <%= new Date(review.createdAt).toLocaleString() %>
                     </small>
