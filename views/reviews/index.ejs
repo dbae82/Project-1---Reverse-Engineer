@@ -74,7 +74,7 @@
                     </div> 
                     <div class="column is-half">
                         <section class="info-box">
-                            <div class="content">
+                            <div class="content movie-info">
                                 <ul>
                                     <li> <h2 id="title"> <%=movie.title %> </h2> </li>
                                     <li id="description"> <%= movie.description %> </li>
@@ -93,6 +93,10 @@
                                     <div class="modal-background" id="create-modal-background"></div>
                                     <div class="modal-content">
                                         <div class="box modal-box">
+                                            <header>
+                                                    <button class="modal-close" id="create-close" aria-label="close">
+                                                    </button>
+                                            </header>
                                             <form action="/reviews/<%= movie.id %>" method="POST">
                                                 <div class="field">
                                                     <label class="label"> Rating </label>
@@ -114,11 +118,8 @@
                                                     ></textarea>
                                                 </div>
                                                 <input type="hidden" name="movie" value="<%= movie._id%>">
-                                                <button class="button mt-4">Submit</button>
+                                                <button class="button mt-4" id="review-submit">Submit</button>
                                             </form>
-                                            <button class="modal-close is-large" id="create-close" 
-                                            aria-label="close">
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -191,7 +192,6 @@
             </div>
         </div>
     </main>
-
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
             <p><i class="fas fa-apple-alt"></i> <strong>Bad Apple</strong> by Jenna Waffensmith & Dan Bae</p>

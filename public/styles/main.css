@@ -141,11 +141,6 @@ li {
   list-style: none;
 }
 
-.content {
-  color: #050533;
-  border: #050533;
-}
-
 .info-box {
   box-shadow: 3px 3px 7px #050533;
   padding: 5px;
@@ -153,9 +148,18 @@ li {
   border-radius: 4px;
 }
 
-#title {
-  font-weight: 20px;
+.movie-info {
   color: #050533;
+  border: #050533;
+}
+
+#title {
+  font-weight: 700;
+  color: #050533;
+}
+
+#description {
+  color: #F2F1E8;
 }
 
 #create-btn {
@@ -165,17 +169,18 @@ li {
   margin-bottom: 40px;
 }
 
-#description {
+#review-submit {
+  background-color: #050533;
   color: #F2F1E8;
+}
+
+.modal-box {
+  background: #F2F1E8;
 }
 
 .modal-content {
   margin-top: 300px;
   overflow: hidden;
-}
-
-.modal-box {
-  background: #F2F1E8;
 }
 
 #review-box {
@@ -188,6 +193,11 @@ li {
 
 .edit-btn {
   margin-left: 9px;
+}
+
+#edit-submit {
+  background: #050533;
+  color: #F2F1E8;
 }
 
 /*# sourceMappingURL=main.css.map */

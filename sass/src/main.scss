@@ -141,11 +141,6 @@ li {
     list-style: none;
 }
 
-.content {
-    color: $text-color;
-    border: $text-color;
-}
-
 .info-box {
     box-shadow: 3px 3px 7px $text-color;
     padding: 5px;
@@ -153,10 +148,19 @@ li {
     border-radius: 4px;
 }
 
+.movie-info {
+    color: $text-color;
+    border: $text-color;
+}
+
 #title {
-    font-weight: 20px;
+    font-weight: 700;
     color: $text-color;
 } 
+
+#description {
+    color: $nav-color;
+}
 
 #create-btn {
     background-color: $text-color;
@@ -165,17 +169,18 @@ li {
     margin-bottom: 40px;
 }
 
-#description {
+#review-submit {
+    background-color: $text-color;
     color: $nav-color;
+}
+
+.modal-box {
+    background: $review-background;
 }
 
 .modal-content {
     margin-top: 300px;
     overflow: hidden;
-}
-
-.modal-box {
-    background: $review-background;
 }
 
 #review-box {
@@ -188,4 +193,9 @@ li {
 
 .edit-btn {
     margin-left: 9px;
+}
+
+#edit-submit {
+    background: $text-color;
+    color: $nav-color;
 }
