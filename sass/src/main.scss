@@ -141,7 +141,7 @@ li {
     list-style: none;
 }
 
-#movie-info {
+#movie-info, #title {
     color: $text-color;
 }
 
@@ -150,10 +150,6 @@ li {
     color: $nav-color;
     margin-left: 35px;
     margin-bottom: 40px;
-}
-
-#title {
-    color: $text-color;
 }
 
 #description {
@@ -171,4 +167,14 @@ li {
 
 #review-box {
     background: $review-background;
+    $box-padding: 1rem;
+
+}
+
+#review-rating, #review-content {
+    color: black;
+}
+
+.edit-btn {
+    margin-left: 9px;
 }

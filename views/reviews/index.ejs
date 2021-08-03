@@ -65,7 +65,7 @@
 
         <!-- movie information section -->
     <section>
-        <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
+        <div class="columns is-mobile is-multiline is-centered" id="cards-container">
             <div class="columns">
                     <div class="column is-half">
                         <div class="box">
@@ -129,71 +129,72 @@
     </section>
 
         <!-- post reviews -->
-    <section class="column">
-        <div class="column">
-            <% reviews.forEach(review => { %>
-            <div class="box" id="review-box">
-            <article class="media">
-                <div class="media-left">
-                <figure class="image is-64x64">
-                    <!-- <img src="" alt="User Avatar" /> -->
-                </figure>
-                </div>
-
-                <div class="media-content">
-                <div class="content">
-                   <!--- <h3> </h3> -->
-                    <small>
-                    <%= new Date(review.createdAt).toLocaleString() %>
-                    </small>
-
-                    <br/>
-                  
-                    <% for( let index = 0; index < 5; index++ ) { %> 
-                    <% if (review.rating > index) { %>
-                    <span class="icon" style="color: rgb(228, 228, 15)">
-                    <i class="fas fa-star"></i>
-                    </span>
-                    <% } else { %>
-                    <span class="icon">
-                    <i class="fas fa-star"></i>
-                    </span>
-                    <% } %> 
-                    <% } %>
-
-                    <br />
-                    <%= review.content %>
-                    <hr/>
-    
-                </div>
-                </div>
-                   
-                <div class="media-right">
-                    <section class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link"></a>
-                    <div class="navbar-dropdown">
-
-                        
-
-                          <!-- Edit Modal -->
-                
-                          <%- include('../partials/edit', { review:  review, movieId: movie.id }) %>
-
-                    <hr class="navbar-divider" />
-                        <div>
-                            <form action="/reviews/<%= movie.id %>/<%=review.id %>?_method=DELETE" method="POST">
-                                <input class="button is-danger m-2 is-dark" type="submit" value="Remove"/>
-                                <input type="hidden" name="movie" value="<%= movie.id%>">
-                            </form>
-                        </div>
+    <section>
+        <div  class="columns is-mobile is-centered" >
+            <div class="column is-half">
+                <% reviews.forEach(review => { %>
+                <div class="box" id="review-box">
+                <article class="media">
+                    <div class="media-left">
+                    <figure class="image is-64x64">
+                        <!-- <img src="" alt="User Avatar" /> -->
+                    </figure>
                     </div>
-                    </section>
+
+                    <div class="media-content">
+                    <div class="content">
+                    <!--- <h3> </h3> -->
+                        <small>
+                        <%= new Date(review.createdAt).toLocaleString() %>
+                        </small>
+
+                        <br/>
+                    
+                        <% for( let index = 0; index < 5; index++ ) { %> 
+                        <% if (review.rating > index) { %>
+                        <span class="icon" style="color: rgb(228, 228, 15)">
+                        <i class="fas fa-star"></i>
+                        </span>
+                        <% } else { %>
+                        <span class="icon">
+                        <i class="fas fa-star"></i>
+                        </span>
+                        <% } %> 
+                        <% } %>
+
+                        <br />
+                        <%= review.content %>
+                        <hr/>
+        
+                    </div>
+                    </div>
+                    
+                    <div class="media-right" id="edit-delete">
+                        <section class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link"></a>
+                        <div class="navbar-dropdown">
+
+                            
+
+                            <!-- Edit Modal -->
+                    
+                            <%- include('../partials/edit', { review:  review, movieId: movie.id }) %>
+
+                        <hr class="navbar-divider" />
+                            <div>
+                                <form action="/reviews/<%= movie.id %>/<%=review.id %>?_method=DELETE" method="POST">
+                                    <input class="button is-danger m-2 is-dark" type="submit" value="Remove"/>
+                                    <input type="hidden" name="movie" value="<%= movie.id%>">
+                                </form>
+                            </div>
+                        </div>
+                        </section>
+                    </div>
+                </article>
                 </div>
-            </article>
+                <% }) %>
             </div>
-            <% }) %>
-        </div>
-    </section>
+        </section>
 
     <footer class="footer" id="footer">
         <div class="content has-text-centered">
