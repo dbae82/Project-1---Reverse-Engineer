@@ -108,21 +108,20 @@
                             <button class="button" id="reg-confirm">Register</button>
                         </footer>
                     </form>
-                    <!-- <button class="button" id="reg-cancel">Cancel</button> -->
                 </div>
             </div>
-            <form action="/auth/login" method="POST">
-                <div class="modal" id="log-modal">
-                    <div class="modal-background"></div>
-                    <div class="modal-card">
-                        <header class="modal-card-head">
-                            <p class="modal-card-title">Login</p>
-                            <button class="delete" aria-label="close" id="log-close"></button>
-                        </header>
+            <div class="modal" id="log-modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Login</p>
+                        <button class="delete" aria-label="close" id="log-close"></button>
+                    </header>
+                    <form action="/auth/login" method="POST">
                         <section class="modal-card-body">
                             <div class="field">
                                 <p class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="Email">
+                                    <input name="email" class="input" type="email" placeholder="Email">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
@@ -132,7 +131,7 @@
                             </div>
                             <div class="field">
                                 <p class="control has-icons-left">
-                                    <input class="input" type="password" placeholder="Password">
+                                    <input name="password" class="input" type="password" placeholder="Password">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -141,11 +140,10 @@
                         </section>
                         <footer class="modal-card-foot">
                             <button class="button" id="log-confirm">Login</button>
-                            <button class="button" id="log-cancel">Cancel</button>
                         </footer>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </nav>
 
