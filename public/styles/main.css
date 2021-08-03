@@ -141,7 +141,24 @@ li {
   list-style: none;
 }
 
-#movie-info {
+.info-box {
+  box-shadow: 3px 3px 7px #050533;
+  padding: 5px;
+  border-radius: 4px;
+  background: #F2F1E8;
+}
+
+.movie-info {
+  color: #050533;
+  border: #050533;
+}
+
+#title {
+  font-weight: 700;
+  color: #050533;
+}
+
+#description {
   color: #050533;
 }
 
@@ -150,14 +167,17 @@ li {
   color: #F2F1E8;
   margin-left: 35px;
   margin-bottom: 40px;
+  font-weight: bold;
 }
 
-#title {
-  color: #050533;
-}
-
-#description {
+#review-submit {
+  background-color: #050533;
   color: #F2F1E8;
+  font-weight: bold;
+}
+
+.modal-box {
+  background: #F2F1E8;
 }
 
 .modal-content {
@@ -165,12 +185,28 @@ li {
   overflow: hidden;
 }
 
-.modal-box {
-  background: #F2F1E8;
-}
-
 #review-box {
   background: #F2F1E8;
+  margin-top: 30px;
+}
+
+#review-rating, #review-content {
+  color: black;
+}
+
+.edit-btn {
+  margin-left: 9px;
+  font-weight: bold;
+}
+
+#edit-submit {
+  background: #050533;
+  color: #F2F1E8;
+  font-weight: bold;
+}
+
+#remove-btn {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=main.css.map */

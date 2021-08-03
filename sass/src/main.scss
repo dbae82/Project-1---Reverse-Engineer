@@ -141,7 +141,24 @@ li {
     list-style: none;
 }
 
-#movie-info {
+.info-box {
+    box-shadow: 3px 3px 7px $text-color;
+    padding: 5px;
+    border-radius: 4px;
+    background: $nav-color;
+}
+
+.movie-info {
+    color: $text-color;
+    border: $text-color;
+}
+
+#title {
+    font-weight: 700;
+    color: $text-color;
+} 
+
+#description {
     color: $text-color;
 }
 
@@ -150,14 +167,17 @@ li {
     color: $nav-color;
     margin-left: 35px;
     margin-bottom: 40px;
+    font-weight: bold;
 }
 
-#title {
-    color: $text-color;
+#review-submit {
+    background-color: $text-color;
+    color: $nav-color;
+    font-weight: bold;
 }
 
-#description {
-    color: $review-background;
+.modal-box {
+    background: $review-background;
 }
 
 .modal-content {
@@ -165,10 +185,27 @@ li {
     overflow: hidden;
 }
 
-.modal-box {
-    background: $review-background;
+#review-box {
+    background: $nav-color;
+    margin-top: 30px;
+
 }
 
-#review-box {
-    background: $review-background;
+#review-rating, #review-content {
+    color: black;
+}
+
+.edit-btn {
+    margin-left: 9px;
+    font-weight: bold;
+}
+
+#edit-submit {
+    background: $text-color;
+    color: $nav-color;
+    font-weight: bold;
+}
+
+#remove-btn {
+    font-weight: bold;
 }

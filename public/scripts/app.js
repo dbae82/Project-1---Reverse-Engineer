@@ -12,6 +12,10 @@ $('.edit-btn').on('click', function(e) {
     $(`#${e.target.dataset.reviewid}`).toggleClass("is-active");  
   });
 
+  $('.modal-close').on('click', function(e) {
+    $('.modal').removeClass('is-active');
+});
+
 /* Registration Modal */
 $('#reg-btn').on('click', function(e) {
   $('#reg-modal').addClass('is-active');
