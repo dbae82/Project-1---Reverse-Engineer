@@ -141,9 +141,22 @@ li {
     list-style: none;
 }
 
-#movie-info, #title {
+.content {
     color: $text-color;
+    border: $text-color;
 }
+
+.info-box {
+    box-shadow: 3px 3px 7px $text-color;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+#title {
+    font-weight: 20px;
+    color: $text-color;
+} 
 
 #create-btn {
     background-color: $text-color;
@@ -153,7 +166,7 @@ li {
 }
 
 #description {
-    color: $review-background;
+    color: $nav-color;
 }
 
 .modal-content {
@@ -166,9 +179,7 @@ li {
 }
 
 #review-box {
-    background: $review-background;
-    $box-padding: 1rem;
-
+    background: $nav-color;
 }
 
 #review-rating, #review-content {

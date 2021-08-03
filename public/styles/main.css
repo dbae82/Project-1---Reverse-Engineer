@@ -141,7 +141,20 @@ li {
   list-style: none;
 }
 
-#movie-info, #title {
+.content {
+  color: #050533;
+  border: #050533;
+}
+
+.info-box {
+  box-shadow: 3px 3px 7px #050533;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+#title {
+  font-weight: 20px;
   color: #050533;
 }
 
