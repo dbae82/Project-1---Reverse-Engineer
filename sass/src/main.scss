@@ -144,8 +144,8 @@ li {
 .info-box {
     box-shadow: 3px 3px 7px $text-color;
     padding: 5px;
-    margin: 10px;
     border-radius: 4px;
+    background: $nav-color;
 }
 
 .movie-info {
@@ -159,7 +159,7 @@ li {
 } 
 
 #description {
-    color: $nav-color;
+    color: $text-color;
 }
 
 #create-btn {
@@ -167,11 +167,13 @@ li {
     color: $nav-color;
     margin-left: 35px;
     margin-bottom: 40px;
+    font-weight: bold;
 }
 
 #review-submit {
     background-color: $text-color;
     color: $nav-color;
+    font-weight: bold;
 }
 
 .modal-box {
@@ -185,6 +187,8 @@ li {
 
 #review-box {
     background: $nav-color;
+    margin-top: 30px;
+
 }
 
 #review-rating, #review-content {
@@ -193,9 +197,15 @@ li {
 
 .edit-btn {
     margin-left: 9px;
+    font-weight: bold;
 }
 
 #edit-submit {
     background: $text-color;
     color: $nav-color;
+    font-weight: bold;
+}
+
+#remove-btn {
+    font-weight: bold;
 }
