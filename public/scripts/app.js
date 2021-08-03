@@ -14,7 +14,6 @@ $('.edit-btn').on('click', function(e) {
   
 
 
-<<<<<<< HEAD
 /* Edit Review Modal */
 
 /*
@@ -73,8 +72,6 @@ $('#log-btn').on('click', function(e) {
 $('#log-close').on('click', function(e) {
   $('#log-modal').removeClass('is-active');
 });
-=======
->>>>>>> dev
 
 $('#log-cancel').on('click', function(e) {
   $('#log-modal').removeClass('is-active');
