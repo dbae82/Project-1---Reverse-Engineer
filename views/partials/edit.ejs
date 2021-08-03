@@ -23,7 +23,13 @@
                 <div class="field">
                     <label class="label" for="review-content">Content</label>
                     <div class="control">
-                        <textarea class="textarea" name="content" id="review-content" value ="<%= review.content %>" placeholder ="<%= review.content %>"></textarea>
+                        <textarea
+                        class="textarea"
+                        name="content"
+                        placeholder="Edit your review for <%= movie.title %>!"
+                        id="review-content"
+                        value="<%= review.content %>"> 
+                        </textarea>
                     </div>
                 </div>
                 <button class="button mt-4" id="edit-submit">Submit</button>
