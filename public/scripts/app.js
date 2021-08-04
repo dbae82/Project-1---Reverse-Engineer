@@ -12,8 +12,8 @@ $('.edit-btn').on('click', function (e) {
   $(`#${e.target.dataset.reviewid}`).toggleClass("is-active");
 });
 
-$('.modal-close').on('click', function (e) {
-  $('.modal').removeClass('is-active');
+$('#new-cancel').on('click', function (e) {
+  $('#create-modal').removeClass('is-active');
 });
 
 /* Edit Modal  */

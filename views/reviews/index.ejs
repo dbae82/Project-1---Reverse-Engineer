@@ -18,25 +18,39 @@
 
 <body>
 
-    <%- include('../partials/navbar')  %> 
+    <%- include('../partials/navbar') %>
 
         <!-- movie information section -->
-    <main>
-        <div class="columns is-mobile is-multiline is-centered" id="cards-container">
-            <div class="columns">
+        <main>
+            <div class="columns is-mobile is-multiline is-centered" id="cards-container">
+                <div class="columns">
                     <div class="column is-half p-5 overflow box">
                         <img class="movies-img" src="<%= movie.image %>" alt="<%= movie.title %>">
-                    </div> 
+                    </div>
                     <div class="column is-half">
                         <section class="info-box">
                             <div class="content movie-info p-4">
                                 <ul>
-                                    <li> <h2 id="title"> <%=movie.title %> </h2> </li>
-                                    <li id="description"> <%= movie.description %> </li>
-                                    <li> <strong>Runtime:</strong> <%= movie.runtime %> </li>
-                                    <li> <strong>Genre:</strong> <%= movie.genre %> </li>
-                                    <li> <strong>Cast:</strong> <%= movie.cast %> </li>
-                                    <li> <strong>Rating:</strong> <%= movie.rating %> </li>
+                                    <li>
+                                        <h2 id="title">
+                                            <%=movie.title %>
+                                        </h2>
+                                    </li>
+                                    <li id="description">
+                                        <%= movie.description %>
+                                    </li>
+                                    <li> <strong>Runtime:</strong>
+                                        <%= movie.runtime %>
+                                    </li>
+                                    <li> <strong>Genre:</strong>
+                                        <%= movie.genre %>
+                                    </li>
+                                    <li> <strong>Cast:</strong>
+                                        <%= movie.cast %>
+                                    </li>
+                                    <li> <strong>Rating:</strong>
+                                        <%= movie.rating %>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -48,121 +62,123 @@
                                 <div class="modal" id="create-modal">
                                     <div class="modal-background" id="create-modal-background"></div>
                                     <div class="modal-content">
-                                        <div class="box modal-box">
-                                            <header>
-                                                    <button class="modal-close" id="create-close" aria-label="close">
-                                                    </button>
+                                        
+                                            <header class="modal-card-head">
+                                                <p class="modal-card-title">New Review</p>
+                                                <button class="delete" aria-label="close" id="new-cancel"></button>
                                             </header>
-                                            <form action="/reviews/<%= movie.id %>" method="POST">
-                                                <div class="field">
-                                                    <label class="label"> Rating </label>
-                                                    <input 
-                                                        class="input"
-                                                        type="number"
-                                                        name="rating"
-                                                        min="1"
-                                                        max="5"
-                                                        placeholder="1-5"
-                                                    />
-                                                </div>
-                                                <div class="field">
-                                                    <label class="label">Content</label>
-                                                    <textarea
-                                                        name="content"
-                                                        class="textarea"
-                                                        placeholder="Leave a review for <%= movie.title %>!"
-                                                    ></textarea>
-                                                </div>
-                                                <input type="hidden" name="movie" value="<%= movie._id%>">
-                                                <button class="button mt-4" id="review-submit">Submit</button>
+                                            <section class="modal-card-body">
+
+                                                <form action="/reviews/<%= movie.id %>" method="POST">
+                                                    <div class="field">
+                                                        <label class="label"> Rating </label>
+                                                        <input class="input" type="number" name="rating" min="1" max="5"
+                                                            placeholder="1-5" />
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="label">Content</label>
+                                                        <textarea name="content" class="textarea"
+                                                            placeholder="Leave a review for <%= movie.title %>!"></textarea>
+                                                    </div>
+                                                    <input type="hidden" name="movie" value="<%= movie._id%>">
+                                            </section>
+                                            <footer class="modal-card-foot">
+                                                <button class="button" id="new-submit">Submit</button>
+                                            </footer>
                                             </form>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
-                        </section>                     <!-- post reviews -->
+                        </section> <!-- post reviews -->
                         <section>
                             <div>
                                 <div>
-                                    <% reviews.forEach(review => { %>
-                                    <div class="box" id="review-box">
-                                    <article class="media">
-                                        <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <img src="<%= review.user.avatar %>" alt="User Avatar" />
-                                        </figure>
-                                        </div>
-
-                                        <div class="media-content">
-                                        <div class="content">
-                                            <strong>
-                                                <%= review.user.username %> 
-                                            </strong>
-                                            <small>
-                                            <%= new Date(review.createdAt).toLocaleString() %>
-                                            </small>
-
-                                            <br/>
-                                        
-                                            <% for( let index = 0; index < 5; index++ ) { %> 
-                                            <% if (review.rating > index) { %>
-                                            <span class="icon" style="color: rgb(228, 228, 15)">
-                                            <i class="fas fa-star"></i>
-                                            </span>
-                                            <% } else { %>
-                                            <span class="icon">
-                                            <i class="fas fa-star"></i>
-                                            </span>
-                                            <% } %> 
-                                            <% } %>
-                                        <br/>
-                                            <%= review.content %>
-                                        </div>
-                                        </div>
-                                        
-                                        <div class="media-right" id="edit-delete">
-                                            <div class="navbar-item has-dropdown is-hoverable">
-                                            <a class="navbar-link"></a>
-                                            <div class="navbar-dropdown is-right">
-
-                                                
-
-                                                <!-- Edit Modal -->
-                                        
-                                                <%- include('../partials/edit', { review:  review, movieId: movie.id }) %>
-
-                                            <hr class="navbar-divider" />
-                                                <div>
-                                                    <form action="/reviews/<%= movie.id %>/<%=review.id %>?_method=DELETE" method="POST">
-                                                        <input class="button" id="remove-btn" type="submit" value="Remove"/>
-                                                        <input type="hidden" name="movie" value="<%= movie.id%>">
-                                                    </form>
+                                    <% reviews.forEach(review=> { %>
+                                        <div class="box" id="review-box">
+                                            <article class="media">
+                                                <div class="media-left">
+                                                    <figure class="image is-64x64">
+                                                        <img src="<%= review.user.avatar %>" alt="User Avatar" />
+                                                    </figure>
                                                 </div>
-                                            </div>
+
+                                                <div class="media-content">
+                                                    <div class="content">
+                                                        <strong>
+                                                            <%= review.user.username %>
+                                                        </strong>
+                                                        <small>
+                                                            <%= new Date(review.createdAt).toLocaleString() %>
+                                                        </small>
+
+                                                        <br />
+
+                                                        <% for( let index=0; index < 5; index++ ) { %>
+                                                            <% if (review.rating> index) { %>
+                                                                <span class="icon" style="color: rgb(228, 228, 15)">
+                                                                    <i class="fas fa-star"></i>
+                                                                </span>
+                                                                <% } else { %>
+                                                                    <span class="icon">
+                                                                        <i class="fas fa-star"></i>
+                                                                    </span>
+                                                                    <% } %>
+                                                                        <% } %>
+                                                                            <br />
+                                                                            <%= review.content %>
+                                                    </div>
+                                                </div>
+
+                                                <div class="media-right" id="edit-delete">
+                                                    <div class="navbar-item has-dropdown is-hoverable">
+                                                        <a class="navbar-link"></a>
+                                                        <div class="navbar-dropdown is-right">
+
+
+
+                                                            <!-- Edit Modal -->
+
+                                                            <%- include('../partials/edit', { review: review, movieId:
+                                                                movie.id }) %>
+
+                                                                <hr class="navbar-divider" />
+                                                                <div>
+                                                                    <form
+                                                                        action="/reviews/<%= movie.id %>/<%=review.id %>?_method=DELETE"
+                                                                        method="POST">
+                                                                        <input class="button" id="remove-btn"
+                                                                            type="submit" value="Remove" />
+                                                                        <input type="hidden" name="movie"
+                                                                            value="<%= movie.id%>">
+                                                                    </form>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
                                         </div>
-                                        </div>
-                                    </article>
-                                    </div>
-                                    <% }) %>
-                            </div>
+                                        <% }) %>
+                                </div>
                         </section>
                     </div>
+                </div>
             </div>
-        </div>
-    </main>
-    <footer class="footer" id="footer">
-        <div class="content has-text-centered">
-            <p><i class="fas fa-apple-alt"></i> <strong>Bad Apple</strong> by Jenna Waffensmith & Dan Bae</p>
-            <hr>
-        </div>
-        <div class="content has-text-centered">
-            <ul>
-                <li>About Us</li>
-                <li>Careers</li>
-                <li>Contact Us</li>
-            </ul>
-        </div>
-    </footer>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="content has-text-centered">
+                <p><i class="fas fa-apple-alt"></i> <strong>Bad Apple</strong> by Jenna Waffensmith & Dan Bae</p>
+                <hr>
+            </div>
+            <div class="content has-text-centered">
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </footer>
 
 </body>
+
 </html>
