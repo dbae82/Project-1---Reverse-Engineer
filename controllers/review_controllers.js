@@ -5,6 +5,7 @@ const { Review, Product } = require('../models');
 
 router.post('/:id', async function(req, res, next) {
     try {
+        req.body.user = req.session.currentUser.id;
         const createdReview = await Review.create(req.body);
         console.log("post route for create review");
         return res.redirect(`/${createdReview.movie._id}`);

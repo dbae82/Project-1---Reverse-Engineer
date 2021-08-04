@@ -18,7 +18,7 @@ $('.modal-close').on('click', function (e) {
 
 /* Edit Modal  */
 $('#edit-cancel').on('click', function(e) {
-  $('.edit-modal').removeClass('is-active');
+  $(`#${e.target.dataset.reviewid}`).toggleClass('is-active');
 });
 
 /* Registration Modal */

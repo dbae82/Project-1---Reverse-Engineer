@@ -5,7 +5,7 @@
     <div class="modal-card">
         <header class="modal-card-head">
             <p class="modal-card-title">Edit Review</p>
-            <button class="delete" aria-label="close" id="edit-cancel"></button>
+            <button class="delete" aria-label="close" id="edit-cancel" data-reviewId="<%= review.id%>"></button>
         </header>
         <section class="modal-card-body">
             <form action="/reviews/<%= review.id%>/edit?_method=PUT" method="POST">

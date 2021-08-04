@@ -25,6 +25,9 @@ router.post('/register', async function (req, res, next) {
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(req.body.password, salt);
         req.body.password = hash;
+        if (req.body.avatar === '') {
+            delete req.body.avatar;
+        } 
         const newUser = await User.create(req.body);
         return res.redirect('/');
     } catch (error) {

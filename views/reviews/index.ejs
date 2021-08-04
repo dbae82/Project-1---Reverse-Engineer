@@ -24,20 +24,19 @@
     <main>
         <div class="columns is-mobile is-multiline is-centered" id="cards-container">
             <div class="columns">
-                    <div class="column is-half">
-                        <div class="box">
-                            <img src="<%= movie.image %>" alt="<%= movie.title %>">
-                        </div>
+                    <div class="column is-half p-5 overflow box">
+                        <img class="movies-img" src="<%= movie.image %>" alt="<%= movie.title %>">
                     </div> 
                     <div class="column is-half">
                         <section class="info-box">
-                            <div class="content movie-info">
+                            <div class="content movie-info p-4">
                                 <ul>
                                     <li> <h2 id="title"> <%=movie.title %> </h2> </li>
                                     <li id="description"> <%= movie.description %> </li>
-                                    <li> <%= movie.runtime %> </li>
+                                    <li> <strong>Runtime:</strong> <%= movie.runtime %> </li>
                                     <li> <strong>Genre:</strong> <%= movie.genre %> </li>
                                     <li> <strong>Cast:</strong> <%= movie.cast %> </li>
+                                    <li> <strong>Rating:</strong> <%= movie.rating %> </li>
                                 </ul>
                             </div>
 
@@ -90,12 +89,15 @@
                                     <article class="media">
                                         <div class="media-left">
                                         <figure class="image is-64x64">
-                                            <!-- <img src="" alt="User Avatar" /> -->
+                                            <img src="<%= review.user.avatar %>" alt="User Avatar" />
                                         </figure>
                                         </div>
 
                                         <div class="media-content">
                                         <div class="content">
+                                            <strong>
+                                                <%= review.user.username %> 
+                                            </strong>
                                             <small>
                                             <%= new Date(review.createdAt).toLocaleString() %>
                                             </small>
