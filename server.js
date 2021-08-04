@@ -45,10 +45,17 @@ app.use(function(req, res, next) {
     next();
 });
 
+const authRequired = function (req, res, next) {
+    if (!req.session.currentUser) {
+        return next();
+    }
+        return res.redirect('/');
+};
+    
 /* routes */
-app.use('/reviews', controllers.review);
 app.use('/auth', controllers.auth);
 app.use('/', controllers.movie);
+app.use('/reviews', authRequired, controllers.review);
 
 
 /* 404 route  */
