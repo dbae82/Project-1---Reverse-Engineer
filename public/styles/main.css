@@ -196,8 +196,10 @@ li {
 }
 
 .edit-btn {
-  margin-left: 9px;
   font-weight: bold;
+  margin-left: 20px;
+  background-color: #050533;
+  color: #F2F1E8;
 }
 
 #edit-submit {
@@ -208,6 +210,9 @@ li {
 
 #remove-btn {
   font-weight: bold;
+  margin: 0 5px 0 5px;
+  background-color: #E34234;
+  color: #F2F1E8;
 }
 
 #error-card {

@@ -119,9 +119,9 @@
                                         </div>
                                         
                                         <div class="media-right" id="edit-delete">
-                                            <section class="navbar-item has-dropdown is-hoverable">
+                                            <div class="navbar-item has-dropdown is-hoverable">
                                             <a class="navbar-link"></a>
-                                            <div class="navbar-dropdown">
+                                            <div class="navbar-dropdown is-right">
 
                                                 
 
@@ -132,12 +132,12 @@
                                             <hr class="navbar-divider" />
                                                 <div>
                                                     <form action="/reviews/<%= movie.id %>/<%=review.id %>?_method=DELETE" method="POST">
-                                                        <input class="button is-danger m-2 is-dark" id="remove-btn" type="submit" value="Remove"/>
+                                                        <input class="button" id="remove-btn" type="submit" value="Remove"/>
                                                         <input type="hidden" name="movie" value="<%= movie.id%>">
                                                     </form>
                                                 </div>
                                             </div>
-                                            </section>
+                                        </div>
                                         </div>
                                     </article>
                                     </div>
