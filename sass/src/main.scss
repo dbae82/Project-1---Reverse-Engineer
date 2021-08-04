@@ -57,6 +57,20 @@ body {
     font-weight: bold;
 }
 
+#user {
+    color: $text-color;
+    font-weight: bold;
+    font-family: $primary-font;
+}
+
+#logout-btn {
+    background-color: $logo-color;
+    font-family: $primary-font;
+    font-weight: bold;
+    color: $nav-color;
+    margin: 5px 5px 0 0;
+}
+
 #cards-container {
     margin: 20px;
 }

@@ -54,6 +54,20 @@ body {
   font-weight: bold;
 }
 
+#user {
+  color: #050533;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+#logout-btn {
+  background-color: #E34234;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #F2F1E8;
+  margin: 5px 5px 0 0;
+}
+
 #cards-container {
   margin: 20px;
 }
