@@ -3,6 +3,9 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const { User } = require('../models');
 
+
+const { Movie, Review } = require('../models');
+
 router.get('/register', function (req, res) {
     return res.send('register, got it!');
 });
@@ -38,7 +41,11 @@ router.post('/login', async function (req, res) {
         }
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         if (!match) {
-            return res.send('Password Invalid');
+                const allMovies = await Movie.find({});
+                const context = {
+                    movies: allMovies,
+                };
+            return res.render('./auth/index', context);
         }  
         req.session.currentUser = {
             id: foundUser._id,
