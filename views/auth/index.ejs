@@ -19,7 +19,7 @@
 <body>
     
     <%- include('../partials/navbar')  %> 
-
+    
     <article class="message is-warning">
         <div class="message-header">
           <p>Try Again</p>
@@ -28,7 +28,7 @@
         <div class="message-body">
           <strong>Incorrect username or password</strong>
         </div>
-      </article>
+    </article>
     <div class="columns is-mobile is-multiline is-vcentered" id="cards-container">
         <% for(let idx=0; idx < movies.length; idx++){ %>
             <% const movie=movies[idx] %>
