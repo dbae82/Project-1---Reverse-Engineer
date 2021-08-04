@@ -30,9 +30,18 @@ app.use(
 );
 
 /* middleware */
+
+app.use( function (req, res, next) {
+    res.locals.user = req.session.currentUser;
+    return next ();
+});
+
+app.use(require('./utils/navLinks'));
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(methodOverride("_method"));
+
 app.use(function(req, res, next) {
     console.log(`${req.url} ${req.method}`);
     next();

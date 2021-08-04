@@ -29,16 +29,26 @@
         </div>
 
         <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary" id="reg-btn">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light" id="log-btn">
-                        Log in
-                    </a>
+            <% if (typeof user !== 'undefined') { %>
+                <p class='navbar-item'> <%= user.username %> </p>
+                <form action="/auth/logout" method="GET">
+                    <div class="buttons">
+                        <input class="button" type="submit" id="logout-btn" value="Log Out">   
+                    </div>
+                </form>
+            <% } %>  
+
+            <% if (typeof user === 'undefined') { %>
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" id="reg-btn">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light" id="log-btn">
+                            Log in
+                        </a>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="modal" id="reg-modal">
             <div class="modal-background"></div>
@@ -133,5 +143,6 @@
                 </form>
             </div>
         </div>
+        <% } %>  
     </div>
 </nav>
