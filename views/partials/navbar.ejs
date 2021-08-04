@@ -30,7 +30,7 @@
 
         <div class="navbar-end">
             <% if (typeof user !== 'undefined') { %>
-                <p class='navbar-item'> <%= user.username %> </p>
+                <p class='navbar-item' id="user"> <%= user.username %> </p>
                 <form action="/auth/logout" method="GET">
                     <div class="buttons">
                         <input class="button" type="submit" id="logout-btn" value="Log Out">   
@@ -106,16 +106,17 @@
                 <header class="modal-card-head">
                     <p class="modal-card-title">Login</p>
                     <button class="delete" aria-label="close" id="log-close"></button>
-                    <!-- <article class="message is-warning">
-                        <div class="message-header">
-                          <p>Try Again</p>
-                          <button class="delete" aria-label="delete"></button>
-                        </div>
-                        <div class="message-body">
-                          <strong>Incorrect username or password</strong>
-                        </div>
-                    </article> -->
                 </header>
+                <% if (typeof error !== 'undefined') { %>
+                <article class="message is-danger" id="log-error">
+                    <div class="message-header" id="log-error">
+                        <p>Try Again</p>
+                    </div>
+                    <div class="message-body">
+                        <strong>Incorrect username or password</strong>
+                    </div>
+                </article>
+                <% } %>
                 <form action="/auth/login" method="POST">
                     <section class="modal-card-body">
                         <div class="field">
