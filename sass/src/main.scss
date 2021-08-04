@@ -61,6 +61,15 @@ body {
     margin: 20px;
 }
 
+.movie-img {
+    height: 100%;
+    width: 100%;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
 .box {
     background-color: $text-color;
 }
@@ -143,7 +152,7 @@ li {
 
 .info-box {
     box-shadow: 3px 3px 7px $text-color;
-    padding: 5px;
+    // padding: 5px;
     border-radius: 4px;
     background: $nav-color;
 }
