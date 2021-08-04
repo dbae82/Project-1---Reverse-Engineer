@@ -43,6 +43,14 @@ app.use('/reviews', controllers.review);
 app.use('/auth', controllers.auth);
 app.use('/', controllers.movie);
 
+/* 404 route  */
+app.get('/*', function(req, res) {
+    const context = {
+        error: req.error,
+    };
+    res.render('404', context);
+});
+
 
 // Server bind
 app.listen(PORT, function () {
