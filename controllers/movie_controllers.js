@@ -23,6 +23,7 @@ router.get('/', async function (req, res, next) {
 router.get('/:id', async function (req, res, next) {
     try {
         const foundMovie = await Movie.findById(req.params.id);
+        console.log(req.user);
         const allReviews = await Review.find({ movie: req.params.id }).populate('user');
         const context = {
             movie: foundMovie,

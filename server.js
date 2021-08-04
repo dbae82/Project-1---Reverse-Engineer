@@ -40,18 +40,18 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(methodOverride("_method"));
 
+const authRequired = function (req, res, next) {
+    if (!req.session.currentUser) {
+        return res.redirect('/');
+    }
+    return next();  
+};
+
 app.use(function(req, res, next) {
     console.log(`${req.url} ${req.method}`);
     next();
 });
 
-const authRequired = function (req, res, next) {
-    if (!req.session.currentUser) {
-        return next();
-    }
-        return res.redirect('/');
-};
-    
 /* routes */
 app.use('/auth', controllers.auth);
 app.use('/', controllers.movie);
