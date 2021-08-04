@@ -68,7 +68,15 @@ body {
 }
 
 .box {
+  margin-top: 10px;
   background-color: #050533;
+}
+
+#new-submit {
+  background-color: #050533;
+  font-family: "Roboto", sans-serif;
+  color: #F2F1E8;
+  font-weight: bold;
 }
 
 .flip-card-container {

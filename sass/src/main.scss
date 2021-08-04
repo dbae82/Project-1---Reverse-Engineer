@@ -71,7 +71,15 @@ body {
 }
 
 .box {
+    margin-top: 10px;
     background-color: $text-color;
+}
+
+#new-submit {
+    background-color: $text-color;
+    font-family: $primary-font;
+    color: $nav-color;
+    font-weight: bold;
 }
 
 .flip-card-container {
