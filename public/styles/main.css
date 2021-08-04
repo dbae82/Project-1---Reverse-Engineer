@@ -209,4 +209,17 @@ li {
   font-weight: bold;
 }
 
+#error-card {
+  max-width: 625px;
+  text-align: center;
+  background-color: #0D698B;
+  box-shadow: none;
+  color: #F2F1E8;
+  margin-top: 100px;
+  margin-bottom: 75px;
+}
+#error-card h1 {
+  color: #F2F1E8;
+}
+
 /*# sourceMappingURL=main.css.map */
