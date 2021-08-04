@@ -30,4 +30,36 @@ router.post('/register', async function (req, res, next) {
     }
 });
 
+router.post('/login', async function (req, res) {
+    try {
+        const foundUser = await User.findOne( {email: req.body.email} );
+        if (!foundUser) {
+            return res.redirect('/');
+        }
+        const match = await bcrypt.compare(req.body.password, foundUser.password);
+        if (!match) {
+            return res.send('Password Invalid');
+        }  
+        req.session.currentUser = {
+            id: foundUser._id,
+            username: foundUser.username,
+        }
+        return res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
+});
+
+router.get('/logout', async function (){
+    try {
+        await req.session.destroy();
+        return res.redirect('/');
+        
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
+});
+
 module.exports = router;
