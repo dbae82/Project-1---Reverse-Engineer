@@ -107,6 +107,16 @@
                     <p class="modal-card-title">Login</p>
                     <button class="delete" aria-label="close" id="log-close"></button>
                 </header>
+                <% if (typeof error !== 'undefined') { %>
+                <article class="message is-danger" id="log-error">
+                    <div class="message-header" id="log-error">
+                        <p>Try Again</p>
+                    </div>
+                    <div class="message-body">
+                        <strong>Incorrect username or password</strong>
+                    </div>
+                </article>
+                <% } %>
                 <form action="/auth/login" method="POST">
                     <section class="modal-card-body">
                         <div class="field">
