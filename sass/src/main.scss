@@ -209,3 +209,16 @@ li {
 #remove-btn {
     font-weight: bold;
 }
+
+#error-card {
+    max-width: 625px;
+    text-align: center;
+    background-color: $background;
+    box-shadow: none;
+    color: $nav-color;
+    margin-top: 100px;
+    margin-bottom: 75px;
+    h1 {
+        color: $nav-color;
+    }
+}
