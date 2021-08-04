@@ -36,8 +36,6 @@ app.use( function (req, res, next) {
     return next ();
 });
 
-app.use(require('./utils/navLinks'));
-
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(methodOverride("_method"));
