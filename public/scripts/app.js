@@ -1,43 +1,48 @@
 
 /* Create Review Modal */
-$('#create-btn').on('click', function(e) {
-    $("#create-modal").addClass("is-active");  
-  });
-  
-$('.modal-close').on('click', function(e) {
-    $('#create-modal').removeClass('is-active');
+$('#create-btn').on('click', function (e) {
+  $("#create-modal").addClass("is-active");
 });
 
-$('.edit-btn').on('click', function(e) {
-    $(`#${e.target.dataset.reviewid}`).toggleClass("is-active");  
-  });
+$('.modal-close').on('click', function (e) {
+  $('#create-modal').removeClass('is-active');
+});
 
-  $('.modal-close').on('click', function(e) {
-    $('.modal').removeClass('is-active');
+$('.edit-btn').on('click', function (e) {
+  $(`#${e.target.dataset.reviewid}`).toggleClass("is-active");
+});
+
+$('.modal-close').on('click', function (e) {
+  $('.modal').removeClass('is-active');
+});
+
+/* Edit Modal  */
+$('#edit-cancel').on('click', function(e) {
+  $('.edit-modal').removeClass('is-active');
 });
 
 /* Registration Modal */
-$('#reg-btn').on('click', function(e) {
+$('#reg-btn').on('click', function (e) {
   $('#reg-modal').addClass('is-active');
 });
 
-$('#reg-close').on('click', function(e) {
+$('#reg-close').on('click', function (e) {
   $('#reg-modal').removeClass('is-active');
 });
 
-$('#reg-cancel').on('click', function(e) {
+$('#reg-cancel').on('click', function (e) {
   $('#reg-modal').removeClass('is-active');
 });
 
 /* Login Modal */
-$('#log-btn').on('click', function(e) {
+$('#log-btn').on('click', function (e) {
   $('#log-modal').addClass('is-active');
 });
 
-$('#log-close').on('click', function(e) {
+$('#log-close').on('click', function (e) {
   $('#log-modal').removeClass('is-active');
 });
 
-$('#log-cancel').on('click', function(e) {
+$('#log-cancel').on('click', function (e) {
   $('#log-modal').removeClass('is-active');
 });
