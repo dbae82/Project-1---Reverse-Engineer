@@ -23,18 +23,12 @@
                 <div class="field">
                     <label class="label" for="review-content">Content</label>
                     <div class="control">
-                        <textarea
-                        class="textarea"
-                        name="content"
-                        placeholder="Edit your review for <%= movie.title %>!"
-                        id="review-content"
-                        value="<%= review.content %>"> 
-                        </textarea>
+                        <textarea class="textarea" name="content" placeholder="<%= review.content %>!" id="review-content" value="<%= review.content %>"></textarea>
                     </div>
                 </div>
                 <button class="button mt-4" id="edit-submit">Submit</button>
             </form>
-            <button class="modal-close is-large" id="edit-close" 
+            <button class="modal-close is-large" id="edit-close"  
             aria-label="close">
             </button>
         </div>
