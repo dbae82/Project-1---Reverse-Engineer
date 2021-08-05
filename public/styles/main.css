@@ -60,11 +60,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-#log-error {
-  margin-bottom: 0;
-  border-radius: 0;
-}
-
 #logout-btn {
   background-color: #E34234;
   font-family: "Roboto", sans-serif;

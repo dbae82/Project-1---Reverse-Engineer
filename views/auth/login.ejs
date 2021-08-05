@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/app.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Bad Apple</title>
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+        <div class="columns is-mobile is-multiline is-centered p-4">
+            <div class="column is-half box">
+                <img class="movies-img"
+                    src="https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg"
+                    alt="Movie Image">
+            </div>
+            <div class="column is is-half">
+                <section class="info-box">
+                    <div class="content">
+                        <div class="modal-card">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Login</p>
+                            </header>
+                            <article class="message is-danger" id="log-error">
+                                <div class="message-header" id="log-error">
+                                    <p>Try Again</p>
+                                </div>
+                                <div class="message-body">
+                                    <strong>Incorrect username or password</strong>
+                                </div>
+                            </article>
+                            <form action="/auth/login" method="POST">
+                                <section class="modal-card-body">
+                                    <div class="field">
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input name="email" class="input" type="email" placeholder="Email">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <span class="icon is-small is-right">
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="field">
+                                        <p class="control has-icons-left">
+                                            <input name="password" class="input" type="password" placeholder="Password">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button" id="log-confirm">Login</button>
+                                </footer>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer" id="footer">
+            <div class="content has-text-centered">
+                <p><i class="fas fa-apple-alt"></i> <strong>Bad Apple</strong> by Jenna Waffensmith & Dan Bae</p>
+                <hr>
+            </div>
+            <div class="content has-text-centered">
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </footer>
+
+</body>
+
+</html>

@@ -37,7 +37,7 @@ const seed = async function() {
                 runtime: '1h 53m',
                 genre: ['Comedy', ' Drama', ' Fantasy'],
                 cast: ['John Malkovich', ' John Cusack', ' Cameron Diaz', ' Catherine Keener'],
-                image: 'https://m.media-amazon.com/images/M/MV5BM2MxNzc2NDYtOTg3NC00ZTdlLTg4ZjctM2ZkYTA1NDQzZGQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg',
+                image: 'https://m.media-amazon.com/images/M/MV5BYmUxY2MyOTQtYjRlMi00ZWEwLTkzODctZDMxNDcyNTFhYjNjXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg',
                 rating: 'R',
             },
             {
@@ -46,7 +46,7 @@ const seed = async function() {
                 runtime: '2h 49m',
                 genre: ['Adventure', ' Drama', ' Sci-Fi'],
                 cast: ['Matthew McConaughey', ' Anne Hathaway', ' Jessica Chastain'],
-                image: 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY1200_CR90,0,630,1200_AL_.jpg',
+                image: 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
                 rating: 'PG-13',
             },
             {

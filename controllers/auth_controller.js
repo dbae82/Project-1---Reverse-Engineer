@@ -7,11 +7,11 @@ const { User } = require('../models');
 const { Movie, Review } = require('../models');
 
 router.get('/register', function (req, res) {
-    return res.send('register, got it!');
+    return res.render('./auth/register');
 });
 
 router.get('/login', function (req, res) {
-    return res.send('login, got it!');
+    return res.render('./auth/login');
 });
 
 router.post('/register', async function (req, res, next) {
@@ -20,7 +20,7 @@ router.post('/register', async function (req, res, next) {
             $or: [{ email: req.body.email }, { username: req.body.username }],
         });
         if (foundUser) {
-            return res.redirect('/');
+            return res.redirect('/auth/register');
         }
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(req.body.password, salt);
@@ -40,11 +40,11 @@ router.post('/login', async function (req, res) {
     try {
         const foundUser = await User.findOne( {email: req.body.email} );
         if (!foundUser) {
-            throw 'error';
+            return res.redirect('/auth/login');
         }
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         if (!match) {
-            return res.render('/');
+            return res.redirect('/auth/login');
         }  
         req.session.currentUser = {
             id: foundUser._id,
@@ -53,7 +53,7 @@ router.post('/login', async function (req, res) {
         return res.redirect('/');
     } catch (error) {
         console.log(error);
-        return res.redirect('/');
+        return res.redirect('/auth/login');
     }
 });
 
