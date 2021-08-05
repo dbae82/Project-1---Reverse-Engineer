@@ -7,7 +7,7 @@ const { User } = require('../models');
 const { Movie, Review } = require('../models');
 
 router.get('/register', function (req, res) {
-    return res.send('register, got it!');
+    return res.render('./auth/register');
 });
 
 router.get('/login', function (req, res) {
@@ -20,7 +20,7 @@ router.post('/register', async function (req, res, next) {
             $or: [{ email: req.body.email }, { username: req.body.username }],
         });
         if (foundUser) {
-            return res.redirect('/');
+            return res.redirect('/auth/register');
         }
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(req.body.password, salt);
