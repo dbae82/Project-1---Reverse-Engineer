@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/app.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Bad Apple</title>
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+        <!-- movie information section -->
+        <main>
+            <div class="columns is-mobile is-multiline is-centered" id="cards-container">
+                <div class="columns">
+                    <div class="column is-half p-5 overflow box">
+                        <img class="movies-img" src="https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_FMjpg_UX1000_.jpg">
+                    </div>
+                    <div class="column is-half">
+                        <article class="message is-danger" id="log-error">
+                            <div class="message-header" id="log-error">
+                                <p> Expelliarmus! Cannot submit until you login or register..</p>
+                            </div>
+                            <div class="message-body">
+                                <strong>Please register or login above</strong>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="content has-text-centered">
+                <p><i class="fas fa-apple-alt"></i> <strong>Bad Apple</strong> by Jenna Waffensmith & Dan Bae</p>
+                <hr>
+            </div>
+            <div class="content has-text-centered">
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </footer>
+
+</body>
+
+</html>
