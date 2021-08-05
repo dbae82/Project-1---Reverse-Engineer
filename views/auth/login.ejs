@@ -23,7 +23,7 @@
         <div class="columns is-mobile is-multiline is-centered p-4">
             <div class="column is-half box">
                 <img class="movies-img"
-                    src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_FMjpg_UX1000_.jpg"
+                    src="https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg"
                     alt="Movie Image">
             </div>
             <div class="column is is-half">
@@ -31,17 +31,17 @@
                     <div class="content">
                         <div class="modal-card">
                             <header class="modal-card-head">
-                                <p class="modal-card-title">Register</p>
+                                <p class="modal-card-title">Login</p>
                             </header>
-                            <article class="message is-warning">
-                                <div class="message-header">
-                                    <p>Try Again.. Or get shot in the face...</p>
+                            <article class="message is-danger" id="log-error">
+                                <div class="message-header" id="log-error">
+                                    <p>Try Again</p>
                                 </div>
                                 <div class="message-body">
-                                    <strong>Email address or Username is already in use</strong>
+                                    <strong>Incorrect username or password</strong>
                                 </div>
                             </article>
-                            <form action="/auth/register" method="POST">
+                            <form action="/auth/login" method="POST">
                                 <section class="modal-card-body">
                                     <div class="field">
                                         <p class="control has-icons-left has-icons-right">
@@ -61,25 +61,9 @@
                                             </span>
                                         </p>
                                     </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input name="username" class="input" type="username" placeholder="Username">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input name="avatar" class="input" type="avatar" placeholder="Avatar">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user-circle"></i>
-                                            </span>
-                                        </p>
-                                    </div>
                                 </section>
                                 <footer class="modal-card-foot">
-                                    <button class="button" id="reg-confirm">Register</button>
+                                    <button class="button" id="log-confirm">Login</button>
                                 </footer>
                             </form>
                         </div>
