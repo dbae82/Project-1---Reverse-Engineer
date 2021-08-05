@@ -40,15 +40,11 @@ router.post('/login', async function (req, res) {
     try {
         const foundUser = await User.findOne( {email: req.body.email} );
         if (!foundUser) {
-            return res.redirect('/');
+            throw 'error';
         }
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         if (!match) {
-                const allMovies = await Movie.find({});
-                const context = {
-                    movies: allMovies,
-                };
-            return res.render('./auth/index', context);
+            return res.render('/');
         }  
         req.session.currentUser = {
             id: foundUser._id,
@@ -57,7 +53,7 @@ router.post('/login', async function (req, res) {
         return res.redirect('/');
     } catch (error) {
         console.log(error);
-        return res.send(error);
+        return res.redirect('/');
     }
 });
 
