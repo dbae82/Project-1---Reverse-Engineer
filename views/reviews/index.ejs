@@ -129,18 +129,16 @@
                                                                             <%= review.content %>
                                                     </div>
                                                 </div>
-                                                <div> 
-                                                    <% if (user) { %> 
-                                                <div class="media-right" id="edit-delete">
-                                                    <div class="navbar-item has-dropdown is-hoverable">
-                                                        <a class="navbar-link"></a>
-                                                        <% if (review.user._id == user.id) { %> 
-                                                        <div class="navbar-dropdown is-right">
-
+                                                <% if (user) { %> 
+                                                    <div> 
+                                                        <div class="media-right" id="edit-delete">
+                                                        <div class="navbar-item has-dropdown is-hoverable">
+                                                            <a class="navbar-link"></a>
+                                                            <div class="navbar-dropdown is-right">
+                                                            <% if (review.user._id == user.id) { %> 
                                                             <!-- Edit Modal -->
                                                             
-                                                            <%- include('../partials/edit', { review: review, movieId:
-                                                                movie.id }) %>
+                                                            <%- include('../partials/edit', { review: review, movieId: movie.id }) %>
 
                                                                 <hr class="navbar-divider" />
                                                                 <div>
@@ -159,8 +157,7 @@
                                                     <% } %> 
                                                 </div>
                                                 </div>
-                                            </article>
-                                              
+                                            </article> 
                                         </div>
                                         <% }) %>
                                 </div>
