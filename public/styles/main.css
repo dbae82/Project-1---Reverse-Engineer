@@ -223,6 +223,10 @@ li {
   overflow: hidden;
 }
 
+.modal-content {
+  margin-top: 0;
+}
+
 #review-box {
   background: #F2F1E8;
   margin-top: 30px;
