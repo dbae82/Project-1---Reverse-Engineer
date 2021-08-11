@@ -20,73 +20,75 @@
 
     <%- include('../partials/navbar') %>
 
-        <div class="columns is-mobile is-multiline is-centered p-4">
-            <div class="column is-half box">
-                <img class="movies-img"
-                    src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_FMjpg_UX1000_.jpg"
-                    alt="Movie Image">
-            </div>
-            <div class="column is is-half">
-                <section class="info-box">
-                    <div class="content">
-                        <div class="modal-card">
-                            <header class="modal-card-head">
-                                <p class="modal-card-title">Register</p>
-                            </header>
-                            <article class="message is-warning">
-                                <div class="message-header">
-                                    <p>Try Again.. Or get shot in the face...</p>
-                                </div>
-                                <div class="message-body">
-                                    <strong>Email address or Username is already in use</strong>
-                                </div>
-                            </article>
-                            <form action="/auth/register" method="POST">
-                                <section class="modal-card-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left has-icons-right">
-                                            <input name="email" class="input" type="email" placeholder="Email">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
-                                            </span>
-                                            <span class="icon is-small is-right">
-                                            </span>
-                                        </p>
+    <main>
+        <div class="columns is-mobile is-multiline is-centered" id="cards-container">
+            <div class="columns">
+                <div class="column is-half p-5 overflow box">
+                    <img class="movies-img" src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_FMjpg_UX1000_.jpg">
+                </div>
+                <div class="column is is-half">
+                    <section class="info-box">
+                        <div class="content">
+                            <div class="modal-card" id="reg-warn-modal">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Register</p>
+                                </header>
+                                <article class="message is-warning">
+                                    <div class="message-header">
+                                        <p>Try Again.. Or get shot in the face...</p>
                                     </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input name="password" class="input" type="password" placeholder="Password">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                        </p>
+                                    <div class="message-body">
+                                        <strong>Email address or Username is already in use</strong>
                                     </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input name="username" class="input" type="username" placeholder="Username">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input name="avatar" class="input" type="avatar" placeholder="Avatar">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user-circle"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="button" id="reg-confirm">Register</button>
-                                </footer>
-                            </form>
+                                </article>
+                                <form action="/auth/register" method="POST">
+                                    <section class="modal-card-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left has-icons-right">
+                                                <input name="email" class="input" type="email" placeholder="Email">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <span class="icon is-small is-right">
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input name="password" class="input" type="password" placeholder="Password">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input name="username" class="input" type="username" placeholder="Username">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input name="avatar" class="input" type="avatar" placeholder="Avatar">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user-circle"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <button class="button" id="reg-confirm">Register</button>
+                                    </footer>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
+    </main>
 
         <footer class="footer" id="footer">
             <div class="content has-text-centered">

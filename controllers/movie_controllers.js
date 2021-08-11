@@ -29,7 +29,6 @@ router.get('/', async function (req, res, next) {
         }
 
         const allMovies = await Movie.find(query);
-        console.log("allMovies", allMovies);
         const context = {
             movies: allMovies,
         };
