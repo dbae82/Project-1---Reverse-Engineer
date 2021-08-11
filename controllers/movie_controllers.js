@@ -7,7 +7,29 @@ const { Movie, Review } = require('../models');
 /* index route */
 router.get('/', async function (req, res, next) {
     try {
-        const allMovies = await Movie.find({});
+        let query = {};
+
+        if (req.query.q) {
+            query = {
+                $or: [
+                    {
+                        title: {
+                            $regex: req.query.q,
+                            $options: 'i',
+                        },
+                    },
+                    {
+                        genre: {
+                            $regex: req.query.q,
+                            $options: 'i',
+                        },
+                    },
+                ],
+            };
+        }
+
+        const allMovies = await Movie.find(query);
+        console.log("allMovies", allMovies);
         const context = {
             movies: allMovies,
         };

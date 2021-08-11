@@ -4,8 +4,7 @@
             <i class="fas fa-apple-alt fa-2x"></i>
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-            data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -15,41 +14,45 @@
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
             <div class="level-item">
-                <h1>Bad Apple Movies</h1>
-                <!-- <div class="field has-addons">
-                    <p class="control">
-                        <input class="input" type="text" placeholder="Find a movie">
-                    </p>
-                    <p class="control">
-                        <button class="button" id="search-btn">
-                            Search
-                        </button>
-                    </p>
-                </div> -->
+                <!-- <h1>Bad Apple Movies</h1> -->
+                <form action="">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <input name="q" class="input" type="search" placeholder="Find a movie">
+                        </p>
+                        <p class="control">
+                            <button class="button" id="search-btn" type="submit">
+                                Search
+                            </button>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
 
         <div class="navbar-end">
-            <% if (typeof user !== 'undefined') { %>
-                <p class='navbar-item' id="user"> <%= user.username %> </p>
+            <% if (typeof user !=='undefined' ) { %>
+                <p class='navbar-item' id="user">
+                    <%= user.username %>
+                </p>
                 <form action="/auth/logout" method="GET">
                     <div class="buttons">
-                        <input class="button" type="submit" id="logout-btn" value="Log Out">   
+                        <input class="button" type="submit" id="logout-btn" value="Log Out">
                     </div>
                 </form>
-            <% } %>  
+                <% } %>
 
-            <% if (typeof user === 'undefined') { %>
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary" id="reg-btn">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light" id="log-btn">
-                            Log in
-                        </a>
-                    </div>
-                </div>
+                    <% if (typeof user==='undefined' ) { %>
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-primary" id="reg-btn">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a class="button is-light" id="log-btn">
+                                    Log in
+                                </a>
+                            </div>
+                        </div>
         </div>
         <div class="modal" id="reg-modal">
             <div class="modal-background"></div>
@@ -108,43 +111,43 @@
                     <p class="modal-card-title">Login</p>
                     <button class="delete" aria-label="close" id="log-close"></button>
                 </header>
-                <% if (typeof error !== 'undefined') { %>
-                <article class="message is-danger" id="log-error">
-                    <div class="message-header" id="log-error">
-                        <p>Try Again</p>
-                    </div>
-                    <div class="message-body">
-                        <strong>Incorrect username or password</strong>
-                    </div>
-                </article>
-                <% } %>
-                <form action="/auth/login" method="POST">
-                    <section class="modal-card-body">
-                        <div class="field">
-                            <p class="control has-icons-left has-icons-right">
-                                <input name="email" class="input" type="email" placeholder="Email">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                </span>
-                            </p>
+                <% if (typeof error !=='undefined' ) { %>
+                    <article class="message is-danger" id="log-error">
+                        <div class="message-header" id="log-error">
+                            <p>Try Again</p>
                         </div>
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input name="password" class="input" type="password" placeholder="Password">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
+                        <div class="message-body">
+                            <strong>Incorrect username or password</strong>
                         </div>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button class="button" id="log-confirm">Login</button>
-                    </footer>
-                </form>
+                    </article>
+                    <% } %>
+                        <form action="/auth/login" method="POST">
+                            <section class="modal-card-body">
+                                <div class="field">
+                                    <p class="control has-icons-left has-icons-right">
+                                        <input name="email" class="input" type="email" placeholder="Email">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <input name="password" class="input" type="password" placeholder="Password">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </section>
+                            <footer class="modal-card-foot">
+                                <button class="button" id="log-confirm">Login</button>
+                            </footer>
+                        </form>
             </div>
         </div>
-        <% } %>  
+        <% } %>
     </div>
 </nav>
