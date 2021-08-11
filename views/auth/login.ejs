@@ -20,57 +20,59 @@
 
     <%- include('../partials/navbar') %>
 
-        <div class="columns is-mobile is-multiline is-centered p-4">
-            <div class="column is-half box">
-                <img class="movies-img"
-                    src="https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg"
-                    alt="Movie Image">
-            </div>
-            <div class="column is is-half">
-                <section class="info-box">
-                    <div class="content">
-                        <div class="modal-card">
-                            <header class="modal-card-head">
-                                <p class="modal-card-title">Login</p>
-                            </header>
-                            <article class="message is-danger" id="log-error">
-                                <div class="message-header" id="log-error">
-                                    <p>Hurry.. The hobbits are hungry..</p>
-                                </div>
-                                <div class="message-body">
-                                    <strong>Incorrect username or password</strong>
-                                </div>
-                            </article>
-                            <form action="/auth/login" method="POST">
-                                <section class="modal-card-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left has-icons-right">
-                                            <input name="email" class="input" type="email" placeholder="Email">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
-                                            </span>
-                                            <span class="icon is-small is-right">
-                                            </span>
-                                        </p>
+    <main>
+        <div class="columns is-mobile is-multiline is-centered" id="cards-container">
+            <div class="columns">
+                <div class="column is-half p-5 overflow box">
+                    <img class="movies-img" src="https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg">
+                </div>
+                <div class="column is is-half">
+                    <section class="info-box">
+                        <div class="content">
+                            <div class="modal-card" id="log-warn-modal">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Login</p>
+                                </header>
+                                <article class="message is-danger" id="log-error">
+                                    <div class="message-header" id="log-error">
+                                        <p>Hurry.. The hobbits are hungry..</p>
                                     </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input name="password" class="input" type="password" placeholder="Password">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                        </p>
+                                    <div class="message-body">
+                                        <strong>Incorrect username or password</strong>
                                     </div>
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="button" id="log-confirm">Login</button>
-                                </footer>
-                            </form>
+                                </article>
+                                <form action="/auth/login" method="POST">
+                                    <section class="modal-card-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left has-icons-right">
+                                                <input name="email" class="input" type="email" placeholder="Email">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <span class="icon is-small is-right">
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input name="password" class="input" type="password" placeholder="Password">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <button class="button" id="log-confirm">Login</button>
+                                    </footer>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
+    </main>
 
         <footer class="footer" id="footer">
             <div class="content has-text-centered">
