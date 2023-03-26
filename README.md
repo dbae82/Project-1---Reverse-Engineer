@@ -2,6 +2,9 @@
 # Title: Bad Apple
 by Jenna Waffensmith & Dan Bae
 
+# Live Site
+https://badapplemovies.onrender.com/
+
 # Scope
 Our objective is to reverse engineer a web app similar to Rotten Tomatoes. The user will be able to browse through our site to see information about a certain movie and what other people thought about it with reviews. If the user should wish, they will have the opportunity to register and login to our app to join the community and submit their own review as well. The features of our site will be:
 
